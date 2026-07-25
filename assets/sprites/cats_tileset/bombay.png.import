@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ubmpb8qfw04t"
-path="res://.godot/imported/basecat2.png-903f57862042cd9bb9b2db5a9651a36f.ctex"
+uid="uid://blkegt2knjkbf"
+path="res://.godot/imported/bombay.png-0f1a2bd862ea255f347ea4365bee98dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cat/bombay/basecat2.png"
-dest_files=["res://.godot/imported/basecat2.png-903f57862042cd9bb9b2db5a9651a36f.ctex"]
+source_file="res://assets/sprites/cats_tileset/bombay.png"
+dest_files=["res://.godot/imported/bombay.png-0f1a2bd862ea255f347ea4365bee98dd.ctex"]
 
 [params]
 

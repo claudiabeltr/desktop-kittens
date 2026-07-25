@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxr6rvp6sivj2"
-path="res://.godot/imported/basecat3.png-79f63da2f72992bbeb45a52e0f8aacb5.ctex"
+uid="uid://boyu4qiq37sgt"
+path="res://.godot/imported/creamtaby.png-cb22d8b96872a883e5ea5270f79ccd79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cat/bombay/basecat3.png"
-dest_files=["res://.godot/imported/basecat3.png-79f63da2f72992bbeb45a52e0f8aacb5.ctex"]
+source_file="res://assets/sprites/cats_tileset/creamtaby.png"
+dest_files=["res://.godot/imported/creamtaby.png-cb22d8b96872a883e5ea5270f79ccd79.ctex"]
 
 [params]
 
