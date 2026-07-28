@@ -26,6 +26,8 @@ Built with **Godot 4 (GDScript)**, running as a transparent, borderless, always-
 | Petting   | Affection dialogue   | "Purrrr..."   |
 | Sleeping   | Sleep dialogue   | "Zzz..."   |
 | Glitched   | Sleep dialogue   | "Where is my d3v?"   |
+
+
 Phrases live in *json link*, grouped by type, so new lines can be added without touching GDScript.
 
 ## Cat selection panel: how does it work?
