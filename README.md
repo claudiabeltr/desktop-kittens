@@ -12,12 +12,12 @@ Built with **Godot 4 (GDScript)**, running as a transparent, borderless, always-
 ## Animations
 | Animation | Trigger | Frames | Loop |
 |-----------|-----------|-----------|-----------|
-| Idle   | Default, without interaction   | <!--4-->   | Yes  |
-| Petting   | Mouse held/clicked on the cat   | <!--6-->   | No   |
-| Happy   | Without interaction   | <!--3-->   | No  |
-| Yawn   | X seconds without interaction   | <!--7-->   | No  |
-| Sleeping   | X minutes without interaction   | <!--5-->   | No  |
-| Glitched   | 11 hearts reached, without interaction, every x minutes   | <!--3-->   | No  |
+| Idle   | Default, without interaction   | 4   | Yes  |
+| Petting   | Mouse held/clicked on the cat   | 6   | No   |
+| Happy   | Without interaction   | 3  | No  |
+| Yawn   | X seconds without interaction   | 7  | No  |
+| Sleeping   | X minutes without interaction   | 5   | No  |
+| Glitched   | 11 hearts reached, without interaction, every x minutes   | 3   | No  |
 
 ## Dialogue system
 | Animation state | Dialogue type | Example |
