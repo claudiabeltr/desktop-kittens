@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ceqj023gfn4mp"]
+
+[ext_resource type="SpriteFrames" uid="uid://d2tllta70xi5h" path="res://assets/sprites/frames/sprite_frames.tres" id="1_w2twt"]
+
+[node name="Node2D" type="Node2D" unique_id=1642504297]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1918219577]
+texture_filter = 1
+position = Vector2(572, 333)
+scale = Vector2(2.2, 2.2)
+sprite_frames = ExtResource("1_w2twt")
+animation = &"glitched"
+frame = 1
+frame_progress = 1.0
