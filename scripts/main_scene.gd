@@ -34,21 +34,25 @@ func _process(delta: float) -> void:
 	
 	#Switch
 	match state:
+		
 		State.IDLE:
+			# While on IDLE execute IDLE animation
 			if(run_idle_animation == true):
 				run_idle_animation = false
 				sprite.play("idle")
+				# While on IDLE if button is pressed -> PETTING state
 			if(run_petting_animation == true):
 				run_petting_animation = false
 				sprite.play("petting")
 				state = State.PETTING
+				
 		State.PETTING:
+			# While on PETTING if button is unpressed -> IDLE state
 			if(stop_petting_animation == true):
 				stop_petting_animation = false
 				sprite.play("idle")
 				state = State.IDLE
-			
-			pass
+				
 		State.SLEEP:
 			pass
 
