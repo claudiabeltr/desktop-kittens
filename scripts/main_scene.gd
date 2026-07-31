@@ -12,6 +12,8 @@ var state
 
 # run idle animation flag 
 var run_idle_animation = false
+# run petting animation flag 
+var run_petting_animation = false
 
 func _ready() -> void:
 	# Initialize variables
@@ -34,7 +36,11 @@ func _process(delta: float) -> void:
 			if(run_idle_animation == true):
 				run_idle_animation = false
 				sprite.play("idle")
+			if(run_petting_animation == true):
+				sprite.play("petting")
 		State.PETTING:
+			
+			
 			pass
 		State.SLEEP:
 			pass
@@ -44,3 +50,6 @@ func _process(delta: float) -> void:
 func _on_timer_idle_animation_timeout() -> void:
 	run_idle_animation = true
 	
+	
+func _on_button_button_down() -> void:
+	run_petting_animation = true

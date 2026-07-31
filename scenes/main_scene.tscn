@@ -26,4 +26,5 @@ wait_time = 5.0
 wait_time = 300.0
 autostart = true
 
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
