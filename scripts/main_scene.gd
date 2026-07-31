@@ -31,7 +31,9 @@ func _process(delta: float) -> void:
 	#Switch
 	match state:
 		State.IDLE:
-			sprite.play("idle")
+			if(run_idle_animation == true):
+				run_idle_animation = false
+				sprite.play("idle")
 		State.PETTING:
 			pass
 		State.SLEEP:
