@@ -10,6 +10,9 @@ enum State { IDLE, PETTING, SLEEP }
 var sleepiness
 var state
 
+# run idle animation flag 
+var run_idle_animation = false
+
 func _ready() -> void:
 	# Initialize variables
 	sleepiness = 0
@@ -24,8 +27,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	
+	#Switch
+	match state:
+		State.IDLE:
+			sprite.play("idle")
+		State.PETTING:
+			pass
+		State.SLEEP:
+			pass
 
+
+# This function is called when it is time to run the idle animation
 func _on_timer_idle_animation_timeout() -> void:
-	if(state == State.IDLE):
-		sprite.play("idle")
+	run_idle_animation = true
+	
