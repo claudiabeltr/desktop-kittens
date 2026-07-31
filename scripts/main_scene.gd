@@ -47,6 +47,7 @@ func _process(delta: float) -> void:
 			if(run_petting_animation == true):
 				run_petting_animation = false
 				timer_sleep.stop() # Stop sleep timer while petting
+				timer_idle_animation.stop()
 				sprite.play("petting")
 				state = State.PETTING
 				
@@ -55,6 +56,7 @@ func _process(delta: float) -> void:
 				sleepiness += 1
 				if(sleepiness >= 3):
 					sprite.play("sleepy")
+					timer_sleep.stop() # Stop sleep timer while sleeping
 					state = State.SLEEP
 				else:		
 					sprite.play("yawn")
@@ -62,14 +64,20 @@ func _process(delta: float) -> void:
 		State.PETTING:
 			# While on PETTING if button is unpressed -> IDLE state
 			if(stop_petting_animation == true):
+				stop_petting_animation = false
 				sleepiness = 0 # After petting reset sleppiness
 				timer_sleep.start() # Start timer again
-				stop_petting_animation = false
 				sprite.play("idle")
 				state = State.IDLE
 				
 		State.SLEEP:
-			pass
+			if(run_petting_animation == true):
+				run_petting_animation = false
+				sleepiness = 0
+				timer_sleep.start() # Start timer again
+				timer_idle_animation.start()
+				sprite.play_backwards("sleepy") # new animation
+				state = State.IDLE
 
 
 # This function is called when it is time to run the idle animation

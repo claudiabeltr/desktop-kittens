@@ -24,7 +24,7 @@ offset_bottom = 332.0
 wait_time = 5.0
 
 [node name="TimerSleep" type="Timer" parent="." unique_id=771098894]
-wait_time = 10.0
+wait_time = 360.0
 autostart = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
