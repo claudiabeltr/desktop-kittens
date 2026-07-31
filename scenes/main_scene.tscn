@@ -6,9 +6,8 @@
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1918219577]
 texture_filter = 1
-position = Vector2(572, 333)
-scale = Vector2(2.2, 2.2)
+position = Vector2(786.00006, 400.00003)
+scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("1_w2twt")
-animation = &"glitched"
-frame = 1
-frame_progress = 1.0
+animation = &"idle"
+frame_progress = 0.20223118
