@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
+[ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
 [ext_resource type="SpriteFrames" uid="uid://d2tllta70xi5h" path="res://assets/sprites/frames/sprite_frames.tres" id="1_w2twt"]
 
 [node name="Node2D" type="Node2D" unique_id=1642504297]
+script = ExtResource("1_pw63i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1918219577]
 texture_filter = 1
@@ -10,4 +12,18 @@ position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("1_w2twt")
 animation = &"idle"
-frame_progress = 0.20223118
+
+[node name="Button" type="Button" parent="." unique_id=68894806]
+offset_left = 643.0
+offset_top = 247.0
+offset_right = 907.0
+offset_bottom = 332.0
+
+[node name="TimerIdleAnimation" type="Timer" parent="." unique_id=1436751240]
+wait_time = 5.0
+
+[node name="Timer_5m" type="Timer" parent="." unique_id=771098894]
+wait_time = 300.0
+autostart = true
+
+[connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
