@@ -177,6 +177,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5huxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xoqk")
 }],
 "loop": 0,
 "name": &"yawn",

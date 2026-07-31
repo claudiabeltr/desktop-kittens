@@ -11,7 +11,7 @@ texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("1_w2twt")
-animation = &"petting"
+animation = &"yawn"
 
 [node name="Button" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
@@ -23,10 +23,11 @@ offset_bottom = 332.0
 [node name="TimerIdleAnimation" type="Timer" parent="." unique_id=1436751240]
 wait_time = 5.0
 
-[node name="Timer_5m" type="Timer" parent="." unique_id=771098894]
-wait_time = 300.0
+[node name="TimerSleep" type="Timer" parent="." unique_id=771098894]
+wait_time = 10.0
 autostart = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
+[connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
