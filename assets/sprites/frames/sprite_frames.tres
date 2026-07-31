@@ -138,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1ayt2")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"petting",
 "speed": 2.0
 }, {
