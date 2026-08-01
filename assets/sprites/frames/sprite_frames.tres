@@ -10,6 +10,10 @@ region = Rect2(0, 162, 80, 81)
 atlas = ExtResource("1_kk1kw")
 region = Rect2(80, 162, 80, 81)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpknk"]
+atlas = ExtResource("1_kk1kw")
+region = Rect2(0, 0, 80, 81)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjell"]
 atlas = ExtResource("1_kk1kw")
 region = Rect2(0, 0, 80, 81)
@@ -21,10 +25,6 @@ region = Rect2(0, 81, 80, 81)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsgbx"]
 atlas = ExtResource("1_kk1kw")
 region = Rect2(80, 81, 80, 81)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpknk"]
-atlas = ExtResource("1_kk1kw")
-region = Rect2(0, 0, 80, 81)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78s4w"]
 atlas = ExtResource("1_kk1kw")
@@ -86,6 +86,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e2odg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpknk")
 }],
 "loop": 0,
 "name": &"glitched",

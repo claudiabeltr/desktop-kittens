@@ -116,12 +116,21 @@ func _on_timer_sleep_timeout() -> void:
 # Runs an animation with probability based on the total_heart_counter
 func _run_idle_animation(total_heart_counter) -> void:
 	var probability_happy = 0
+	var probability_glitch = 0
+	
 	var random = randf() * 100 #random number between 0 and 100
 	
 	if(total_heart_counter >= 5):
 		probability_happy = 65 #65% to run happy animation when >= 5 total hearts
 		
-	if(random <= probability_happy):
-		sprite.play("happy")
+	if(total_heart_counter == 11):
+		probability_glitch = 1 #1% probability to run glitch animation
+	
+	if(random <= probability_glitch):
+		sprite.play("glitched")
 	else:
-		sprite.play("idle")
+		if(random <= probability_happy):
+			sprite.play("happy")
+		else:
+			sprite.play("idle")
+	
