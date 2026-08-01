@@ -11,7 +11,7 @@ texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("1_w2twt")
-animation = &"yawn"
+animation = &"glitched"
 
 [node name="Button" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)

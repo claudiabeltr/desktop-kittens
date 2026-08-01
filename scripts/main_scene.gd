@@ -9,6 +9,11 @@ enum State { IDLE, PETTING, SLEEP }
 
 var sleepiness
 var state
+var TOTAL_heart_count
+var heart_count
+# !!!!!!!!!!!
+const PETSPERHEART = 3
+const MAXTOTALHEART = 11
 
 # run idle animation flag 
 var run_idle_animation = false
@@ -22,6 +27,8 @@ var run_yawn_animation = false
 func _ready() -> void:
 	# Initialize variables
 	sleepiness = 0
+	TOTAL_heart_count = 0
+	heart_count = 0
 	state = State.IDLE
 	
 	#Play idle animation at start
@@ -50,6 +57,15 @@ func _process(delta: float) -> void:
 				timer_idle_animation.stop()
 				sprite.play("petting")
 				state = State.PETTING
+				
+				if(TOTAL_heart_count < MAXTOTALHEART):
+					heart_count += 1
+					if(heart_count == PETSPERHEART):
+						TOTAL_heart_count += 1
+						heart_count = 0
+					
+				# !!!!!!!!!!!!!!!!!!!!!!!!
+				print("corazones totales: " + str(TOTAL_heart_count) + " corazon actual " + str(heart_count))
 				
 			if(run_yawn_animation == true):
 				run_yawn_animation = false
