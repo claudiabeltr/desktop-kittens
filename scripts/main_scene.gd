@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 				stop_petting_animation = false
 				sleepiness = 0 # After petting reset sleppiness
 				timer_sleep.start() # Start timer again
+				timer_idle_animation.start()
 				sprite.play("idle")
 				state = State.IDLE
 				
