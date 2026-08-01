@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 			# While on IDLE execute IDLE animation
 			if(run_idle_animation == true):
 				run_idle_animation = false
-				sprite.play("idle")
+				_run_idle_animation(TOTAL_heart_count)
 				
 			# While on IDLE if button is pressed -> PETTING state
 			if(run_petting_animation == true):
@@ -112,3 +112,16 @@ func _on_button_button_up() -> void:
 
 func _on_timer_sleep_timeout() -> void:
 	run_yawn_animation = true
+
+# Runs an animation with probability based on the total_heart_counter
+func _run_idle_animation(total_heart_counter) -> void:
+	var probability_happy = 0
+	var random = randf() * 100 #random number between 0 and 100
+	
+	if(total_heart_counter >= 5):
+		probability_happy = 65 #65% to run happy animation when >= 5 total hearts
+		
+	if(random <= probability_happy):
+		sprite.play("happy")
+	else:
+		sprite.play("idle")
