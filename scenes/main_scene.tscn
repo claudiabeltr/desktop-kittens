@@ -27,7 +27,11 @@ wait_time = 5.0
 wait_time = 360.0
 autostart = true
 
+[node name="TimerDialogue" type="Timer" parent="." unique_id=1615493152]
+wait_time = 44.986999999999995
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
 [connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
+[connection signal="timeout" from="TimerDialogue" to="." method="_on_timer_dialogue_timeout"]

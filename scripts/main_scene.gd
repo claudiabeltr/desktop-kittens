@@ -3,6 +3,7 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer_idle_animation: Timer = $TimerIdleAnimation
 @onready var timer_sleep: Timer = $TimerSleep
+@onready var timer_dialogue: Timer = $TimerDialogue
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -36,7 +37,12 @@ func _ready() -> void:
 	
 	#Start 3s timer 
 	timer_idle_animation.start()
-
+	
+	#Load dialogues from file
+	load_dialogues()
+	
+	#Start dialogue timer
+	timer_dialogue.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -101,17 +107,31 @@ func _process(delta: float) -> void:
 func _on_timer_idle_animation_timeout() -> void:
 	run_idle_animation = true
 	
-
 func _on_button_button_down() -> void:
 	run_petting_animation = true
-
 
 func _on_button_button_up() -> void:
 	stop_petting_animation = true
 
-
 func _on_timer_sleep_timeout() -> void:
 	run_yawn_animation = true
+	
+func _on_timer_dialogue_timeout() -> void:
+	var probability_common = 99
+	var dialogue_petting
+	var probability_rare = 1
+	
+	var dialogues_common = dialogues["common"]
+	var dialogues_rare = dialogues["rare"]
+	
+	var random = randf() * 100
+	
+	if(random <= probability_common):
+		var random_number = randi_range(0, dialogues_common.size() - 1)
+		print(dialogues_common[random_number])
+	else:
+		var random_number = randi_range(0, dialogues_rare.size() - 1)
+		print(dialogues_rare[random_number])
 
 # Runs an animation with probability based on the total_heart_counter
 func _run_idle_animation(total_heart_counter) -> void:
@@ -149,3 +169,5 @@ func load_dialogues():
 		dialogues = json.get_data()
 	else:
 		print("Error al parsear JSON: ", json.get_error_message())
+		
+	
