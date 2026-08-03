@@ -85,6 +85,8 @@ func _process(delta: float) -> void:
 				if(sleepiness >= 3):
 					sprite.play("sleepy")
 					timer_sleep.stop() # Stop sleep timer while sleeping
+					timer_idle_animation.stop()
+					timer_dialogue.stop()
 					state = State.SLEEP
 				else:		
 					sprite.play("yawn")
@@ -105,6 +107,7 @@ func _process(delta: float) -> void:
 				sleepiness = 0
 				timer_sleep.start() # Start timer again
 				timer_idle_animation.start()
+				timer_dialogue.start()
 				sprite.play_backwards("sleepy") # new animation
 				state = State.IDLE
 
