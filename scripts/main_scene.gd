@@ -4,6 +4,8 @@ extends Node2D
 @onready var timer_idle_animation: Timer = $TimerIdleAnimation
 @onready var timer_sleep: Timer = $TimerSleep
 @onready var timer_dialogue: Timer = $TimerDialogue
+@onready var dialogue_text: Label = $DialogueText
+@onready var dialogue_textbox: Sprite2D = $TextBox
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -40,6 +42,10 @@ func _ready() -> void:
 	
 	#Load dialogues from file
 	load_dialogues()
+	
+	#Text and textbox are disabled by default
+	dialogue_text.visible = false
+	dialogue_textbox.visible = false
 	
 	#Start dialogue timer
 	timer_dialogue.start()
@@ -118,9 +124,9 @@ func _on_timer_sleep_timeout() -> void:
 	
 func _on_timer_dialogue_timeout() -> void:
 	var probability_common = 99
-	var dialogue_petting
 	var probability_rare = 1
 	
+	# "dialogues" contains ALL the dialogues, we need to get each tier phrases in a list
 	var dialogues_common = dialogues["common"]
 	var dialogues_rare = dialogues["rare"]
 	
@@ -128,11 +134,20 @@ func _on_timer_dialogue_timeout() -> void:
 	
 	if(random <= probability_common):
 		var random_number = randi_range(0, dialogues_common.size() - 1)
-		print(dialogues_common[random_number])
+		dialogue_text.text = dialogues_common[random_number]
 	else:
 		var random_number = randi_range(0, dialogues_rare.size() - 1)
-		print(dialogues_rare[random_number])
-
+		dialogue_text.text = dialogues_rare[random_number]
+		
+	# Make text and text box both visible. 
+	dialogue_text.visible = true
+	dialogue_textbox.visible = true
+	
+	#Start timer to hide text after 10 seconds
+	await get_tree().create_timer(10.0).timeout
+	dialogue_text.visible = false
+	dialogue_textbox.visible = false
+	
 # Runs an animation with probability based on the total_heart_counter
 func _run_idle_animation(total_heart_counter) -> void:
 	var probability_happy = 0
