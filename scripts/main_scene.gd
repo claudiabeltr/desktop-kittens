@@ -11,9 +11,9 @@ var sleepiness
 var state
 var TOTAL_heart_count
 var heart_count
-# !!!!!!!!!!!
 const PETSPERHEART = 3
 const MAXTOTALHEART = 11
+var dialogues
 
 # run idle animation flag 
 var run_idle_animation = false
@@ -133,4 +133,19 @@ func _run_idle_animation(total_heart_counter) -> void:
 			sprite.play("happy")
 		else:
 			sprite.play("idle")
-	
+
+func load_dialogues():
+	var file = FileAccess.open("res://assets/dialogue/dialogue.json", FileAccess.READ)
+	if file == null:
+		print("No se pudo abrir el archivo JSON")
+		return
+	var content = file.get_as_text()
+	file.close()
+
+	var json = JSON.new()
+	var error = json.parse(content)
+
+	if error == OK:
+		dialogues = json.get_data()
+	else:
+		print("Error al parsear JSON: ", json.get_error_message())
