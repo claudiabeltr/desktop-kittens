@@ -10,6 +10,22 @@ extends Node2D
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
 
+# Sprite Frames directory for different skins
+var skins: Dictionary = {
+	"bombay": {
+		"frames": preload("res://assets/sprites/frames/bombay_sprite_frames.tres"),
+		"button": null, #the button is assigned in the _ready method, it needs to exist to get its reference
+	},
+	"calico": {
+		"frames": preload("res://assets/sprites/frames/calico_sprite_frames.tres"),
+		"button": null,
+	},
+	"siames": {
+		"frames": preload("res://assets/sprites/frames/siames_sprite_frames.tres"),
+		"button": null,
+	},
+}
+
 var sleepiness
 var state
 var TOTAL_heart_count
@@ -33,6 +49,14 @@ func _ready() -> void:
 	TOTAL_heart_count = 0
 	heart_count = 0
 	state = State.IDLE
+	
+	# Add buttons to dictionary
+	skins["bombay"]["button"] = $CatMenu/BombayButton
+	skins["calico"]["button"] = $CatMenu/CalicoButton
+	skins["siames"]["button"] = $CatMenu/SiamesButton
+	
+	#Starting cat is BOMBAY
+	set_skin("bombay")
 	
 	#Play idle animation at start
 	sprite.play("idle")
@@ -183,6 +207,8 @@ func _run_idle_animation(total_heart_counter) -> void:
 		else:
 			sprite.play("idle")
 
+# Load dialogues from JSON file. This JSON has the following structure:
+# "Type" -> ["Dialogue 1", "Dialogue 2", "Dialogue 3"]
 func load_dialogues():
 	var file = FileAccess.open("res://assets/dialogue/dialogue.json", FileAccess.READ)
 	if file == null:
@@ -199,4 +225,23 @@ func load_dialogues():
 	else:
 		print("Error al parsear JSON: ", json.get_error_message())
 		
-	
+# This function changes the cat skin. It does so by changing it SpriteFrames,
+# so a new SpriteFrames is required for each skin. It additionally manages the
+# buttons that set the skins, leaving pressed only the button for the current skin
+func set_skin(skin: String) -> void:
+	sprite.set_sprite_frames(skins[skin]["frames"])
+	for key in skins:
+		if(key != skin):
+			skins[key]["button"].button_pressed = false
+
+func _on_calico_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("calico")
+
+func _on_bombay_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("bombay")
+
+func _on_siames_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("siames")
