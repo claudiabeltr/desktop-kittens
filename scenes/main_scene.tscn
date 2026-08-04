@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
-[ext_resource type="SpriteFrames" uid="uid://d2tllta70xi5h" path="res://assets/sprites/frames/sprite_frames.tres" id="1_w2twt"]
+[ext_resource type="SpriteFrames" uid="uid://bj6jjg6q26k88" path="res://assets/sprites/frames/siames_sprite_frames.tres" id="2_e1cbu"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
+[ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
+[ext_resource type="Texture2D" uid="uid://bt3eihx7e1s1v" path="res://assets/sprites/ui_tileset/ui.png" id="5_gubc5"]
+[ext_resource type="Texture2D" uid="uid://b1jert5qwl6ri" path="res://textures/calico_pressed.tres" id="6_6wevv"]
+[ext_resource type="Texture2D" uid="uid://dxb1ic82y21gg" path="res://textures/bombay_default.tres" id="8_e1cbu"]
+[ext_resource type="Texture2D" uid="uid://dih2q8us2sa51" path="res://textures/bombay_pressed.tres" id="9_mngbo"]
+[ext_resource type="Texture2D" uid="uid://tungsv3lxru0" path="res://textures/siames_default.tres" id="10_e1cbu"]
+[ext_resource type="Texture2D" uid="uid://df8nc5tpfl4kh" path="res://textures/siames_pressed.tres" id="11_mngbo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
+atlas = ExtResource("5_gubc5")
+region = Rect2(13, 7, 48, 48)
 
 [node name="Node2D" type="Node2D" unique_id=1642504297]
 script = ExtResource("1_pw63i")
@@ -12,8 +23,8 @@ script = ExtResource("1_pw63i")
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
-sprite_frames = ExtResource("1_w2twt")
-animation = &"glitched"
+sprite_frames = ExtResource("2_e1cbu")
+animation = &"sleepy"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
@@ -48,8 +59,66 @@ position = Vector2(572, 155)
 scale = Vector2(5.8125, 5.8125)
 texture = ExtResource("4_pu3yx")
 
+[node name="CatMenu" type="Control" parent="." unique_id=445221035]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 91.0
+offset_top = 250.0
+offset_right = 404.0
+offset_bottom = 563.0
+
+[node name="TextureRect" type="TextureRect" parent="CatMenu" unique_id=1612265634]
+layout_mode = 0
+offset_right = 313.0
+offset_bottom = 313.0
+texture = SubResource("AtlasTexture_dxr5g")
+
+[node name="BombayButton" type="TextureButton" parent="CatMenu" unique_id=54197753]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("8_e1cbu")
+texture_pressed = ExtResource("9_mngbo")
+stretch_mode = 0
+
+[node name="CalicoButton" type="TextureButton" parent="CatMenu" unique_id=735397730]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 32.0
+offset_right = 106.0
+offset_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource("5_c1pb6")
+texture_pressed = ExtResource("6_6wevv")
+stretch_mode = 0
+
+[node name="SiamesButton" type="TextureButton" parent="CatMenu" unique_id=193661910]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 116.0
+offset_top = 32.0
+offset_right = 148.0
+offset_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource("10_e1cbu")
+texture_pressed = ExtResource("11_mngbo")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
 [connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
 [connection signal="timeout" from="TimerDialogue" to="." method="_on_timer_dialogue_timeout"]
+[connection signal="toggled" from="CatMenu/BombayButton" to="." method="_on_bombay_button_toggled"]
+[connection signal="toggled" from="CatMenu/CalicoButton" to="." method="_on_calico_button_toggled"]
+[connection signal="toggled" from="CatMenu/SiamesButton" to="." method="_on_siames_button_toggled"]
