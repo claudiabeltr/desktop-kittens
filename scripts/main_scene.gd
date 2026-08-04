@@ -75,7 +75,14 @@ func _process(delta: float) -> void:
 					if(heart_count == PETSPERHEART):
 						TOTAL_heart_count += 1
 						heart_count = 0
-					
+				
+				# Dialogue
+				var dialogues_petting = dialogues["petting"]
+				var random_number = randi_range(0, dialogues_petting.size() - 1)
+				dialogue_text.text = dialogues_petting[random_number]
+				dialogue_text.visible = true
+				dialogue_textbox.visible = true
+				
 				# !!!!!!!!!!!!!!!!!!!!!!!!
 				print("corazones totales: " + str(TOTAL_heart_count) + " corazon actual " + str(heart_count))
 				
@@ -100,6 +107,10 @@ func _process(delta: float) -> void:
 				timer_idle_animation.start()
 				sprite.play("idle")
 				state = State.IDLE
+				
+				dialogue_text.visible = false
+				dialogue_textbox.visible = false
+				
 				
 		State.SLEEP:
 			if(run_petting_animation == true):
