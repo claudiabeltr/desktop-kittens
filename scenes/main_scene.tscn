@@ -15,7 +15,7 @@ scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("1_w2twt")
 animation = &"glitched"
 
-[node name="Button" type="Button" parent="." unique_id=68894806]
+[node name="PetButton" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
 offset_left = 643.0
 offset_top = 247.0
@@ -48,8 +48,8 @@ position = Vector2(572, 155)
 scale = Vector2(5.8125, 5.8125)
 texture = ExtResource("4_pu3yx")
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
+[connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
 [connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
 [connection signal="timeout" from="TimerDialogue" to="." method="_on_timer_dialogue_timeout"]
