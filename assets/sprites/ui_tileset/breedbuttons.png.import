@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnig0sqo6s27"
-path="res://.godot/imported/clickedtiles.png-03e2c0de90565803db3eb28884bd313e.ctex"
+uid="uid://2tmgas8tgntu"
+path="res://.godot/imported/breedbuttons.png-7da3dd91c30c15580697a6b6efaf8966.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui_tileset/clickedtiles.png"
-dest_files=["res://.godot/imported/clickedtiles.png-03e2c0de90565803db3eb28884bd313e.ctex"]
+source_file="res://assets/sprites/ui_tileset/breedbuttons.png"
+dest_files=["res://.godot/imported/breedbuttons.png-7da3dd91c30c15580697a6b6efaf8966.ctex"]
 
 [params]
 
