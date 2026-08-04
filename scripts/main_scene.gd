@@ -127,10 +127,10 @@ func _process(delta: float) -> void:
 func _on_timer_idle_animation_timeout() -> void:
 	run_idle_animation = true
 	
-func _on_button_button_down() -> void:
+func _on_petbutton_button_down() -> void:
 	run_petting_animation = true
 
-func _on_button_button_up() -> void:
+func _on_petbutton_button_up() -> void:
 	stop_petting_animation = true
 
 func _on_timer_sleep_timeout() -> void:
