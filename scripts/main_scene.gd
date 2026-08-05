@@ -24,6 +24,10 @@ var skins: Dictionary = {
 		"frames": preload("res://assets/sprites/frames/siames_sprite_frames.tres"),
 		"button": null,
 	},
+	"orangecat": {
+		"frames": preload("res://assets/sprites/frames/orangecat_sprite_frames.tres"),
+		"button": null,
+	},
 }
 
 var sleepiness
@@ -54,6 +58,7 @@ func _ready() -> void:
 	skins["bombay"]["button"] = $CatMenu/BombayButton
 	skins["calico"]["button"] = $CatMenu/CalicoButton
 	skins["siames"]["button"] = $CatMenu/SiamesButton
+	skins["orangecat"]["button"] = $CatMenu/OrangeCatButton
 	
 	#Starting cat is BOMBAY
 	set_skin("bombay")
@@ -245,3 +250,7 @@ func _on_bombay_button_toggled(toggled_on: bool) -> void:
 func _on_siames_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
 		set_skin("siames")
+
+func _on_orangecat_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("orangecat")
