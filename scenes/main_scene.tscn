@@ -75,7 +75,7 @@ texture_pressed = ExtResource("6_6u1mn")
 stretch_mode = 0
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=600922324]
-position = Vector2(573, 162)
+position = Vector2(581, 162)
 script = ExtResource("5_7nt27")
 
 [node name="TextBox" type="Sprite2D" parent="Dialogue" unique_id=447978560]
