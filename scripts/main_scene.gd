@@ -263,3 +263,7 @@ func _on_orangecat_button_toggled(toggled_on: bool) -> void:
 func _on_angora_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
 		set_skin("angora")
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()

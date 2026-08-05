@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://clo18hpuuioj5" path="res://assets/sprites/frames/angora_sprite_frames.tres" id="2_4w45t"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
+[ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
 [ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
 [ext_resource type="Texture2D" uid="uid://bt3eihx7e1s1v" path="res://assets/sprites/ui_tileset/ui.png" id="5_gubc5"]
 [ext_resource type="Texture2D" uid="uid://b1jert5qwl6ri" path="res://textures/calico_pressed.tres" id="6_6wevv"]
@@ -63,14 +64,24 @@ position = Vector2(572, 155)
 scale = Vector2(5.8125, 5.8125)
 texture = ExtResource("4_pu3yx")
 
+[node name="ExitButton" type="TextureButton" parent="." unique_id=97768289]
+texture_filter = 1
+offset_left = 956.0
+offset_top = 216.0
+offset_right = 988.0
+offset_bottom = 248.0
+texture_normal = ExtResource("5_01n6w")
+texture_pressed = ExtResource("5_01n6w")
+stretch_mode = 0
+
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 91.0
-offset_top = 250.0
-offset_right = 404.0
-offset_bottom = 563.0
+offset_left = 242.0
+offset_top = 245.0
+offset_right = 555.0
+offset_bottom = 558.0
 
 [node name="TextureRect" type="TextureRect" parent="CatMenu" unique_id=1612265634]
 layout_mode = 0
@@ -149,6 +160,7 @@ stretch_mode = 0
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
 [connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
 [connection signal="timeout" from="TimerDialogue" to="." method="_on_timer_dialogue_timeout"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="CatMenu/BombayButton" to="." method="_on_bombay_button_toggled"]
 [connection signal="toggled" from="CatMenu/CalicoButton" to="." method="_on_calico_button_toggled"]
 [connection signal="toggled" from="CatMenu/SiamesButton" to="." method="_on_siames_button_toggled"]
