@@ -74,23 +74,25 @@ texture_pressed = ExtResource("6_6u1mn")
 stretch_mode = 0
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=600922324]
+position = Vector2(573, 162)
 script = ExtResource("5_7nt27")
 
 [node name="TextBox" type="Sprite2D" parent="Dialogue" unique_id=447978560]
 texture_filter = 1
-position = Vector2(585, 162)
 scale = Vector2(5.8125, 5.8125)
 texture = ExtResource("4_pu3yx")
 
 [node name="DialogueText" type="Label" parent="Dialogue" unique_id=2019294773]
 z_index = 1
-offset_left = 448.0
-offset_top = 119.0
-offset_right = 715.0
-offset_bottom = 188.0
+offset_left = -132.0
+offset_top = -41.0
+offset_right = 135.0
+offset_bottom = 28.0
+text = "hola"
 label_settings = ExtResource("3_7ykc4")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
 texture_filter = 1
