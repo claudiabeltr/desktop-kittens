@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
-[ext_resource type="SpriteFrames" uid="uid://bw2nnjvv82sf0" path="res://assets/sprites/frames/orangecat_sprite_frames.tres" id="2_e1cbu"]
+[ext_resource type="SpriteFrames" uid="uid://clo18hpuuioj5" path="res://assets/sprites/frames/angora_sprite_frames.tres" id="2_4w45t"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://df8nc5tpfl4kh" path="res://textures/siames_pressed.tres" id="11_mngbo"]
 [ext_resource type="Texture2D" uid="uid://oyyyj6eipvgh" path="res://textures/orangecat_default.tres" id="12_4w45t"]
 [ext_resource type="Texture2D" uid="uid://bogow7j3mfi43" path="res://textures/orangecat_pressed.tres" id="13_r6p65"]
+[ext_resource type="Texture2D" uid="uid://dy5765tmcwnuo" path="res://textures/angora_default.tres" id="14_si52b"]
+[ext_resource type="Texture2D" uid="uid://ceypnatecqy15" path="res://textures/angora_pressed.tres" id="15_01n6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -25,7 +27,7 @@ script = ExtResource("1_pw63i")
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
-sprite_frames = ExtResource("2_e1cbu")
+sprite_frames = ExtResource("2_4w45t")
 animation = &"yawn"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
@@ -129,6 +131,19 @@ texture_normal = ExtResource("12_4w45t")
 texture_pressed = ExtResource("13_r6p65")
 stretch_mode = 0
 
+[node name="AngoraButton" type="TextureButton" parent="CatMenu" unique_id=766248376]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 64.0
+toggle_mode = true
+texture_normal = ExtResource("14_si52b")
+texture_pressed = ExtResource("15_01n6w")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
@@ -138,3 +153,4 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/CalicoButton" to="." method="_on_calico_button_toggled"]
 [connection signal="toggled" from="CatMenu/SiamesButton" to="." method="_on_siames_button_toggled"]
 [connection signal="toggled" from="CatMenu/OrangeCatButton" to="." method="_on_orangecat_button_toggled"]
+[connection signal="toggled" from="CatMenu/AngoraButton" to="." method="_on_angora_button_toggled"]
