@@ -5,6 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
+[ext_resource type="Script" uid="uid://bpqdq8sb8u4ix" path="res://scripts/dialogue.gd" id="5_7nt27"]
 [ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
 [ext_resource type="Texture2D" uid="uid://bt3eihx7e1s1v" path="res://assets/sprites/ui_tileset/ui.png" id="5_gubc5"]
 [ext_resource type="Texture2D" uid="uid://d1xjrwhfuf22f" path="res://textures/menu_default.tres" id="6_6u1mn"]
@@ -49,22 +50,6 @@ autostart = true
 [node name="TimerDialogue" type="Timer" parent="." unique_id=1615493152]
 wait_time = 60.0
 
-[node name="DialogueText" type="Label" parent="." unique_id=2019294773]
-z_index = 1
-offset_left = 411.0
-offset_top = 109.0
-offset_right = 725.0
-offset_bottom = 194.0
-label_settings = ExtResource("3_7ykc4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextBox" type="Sprite2D" parent="." unique_id=447978560]
-texture_filter = 1
-position = Vector2(572, 155)
-scale = Vector2(5.8125, 5.8125)
-texture = ExtResource("4_pu3yx")
-
 [node name="ExitButton" type="TextureButton" parent="." unique_id=97768289]
 texture_filter = 1
 offset_left = 956.0
@@ -87,6 +72,25 @@ toggle_mode = true
 texture_normal = ExtResource("6_6u1mn")
 texture_pressed = ExtResource("6_6u1mn")
 stretch_mode = 0
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=600922324]
+script = ExtResource("5_7nt27")
+
+[node name="TextBox" type="Sprite2D" parent="Dialogue" unique_id=447978560]
+texture_filter = 1
+position = Vector2(585, 162)
+scale = Vector2(5.8125, 5.8125)
+texture = ExtResource("4_pu3yx")
+
+[node name="DialogueText" type="Label" parent="Dialogue" unique_id=2019294773]
+z_index = 1
+offset_left = 448.0
+offset_top = 119.0
+offset_right = 715.0
+offset_bottom = 188.0
+label_settings = ExtResource("3_7ykc4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
 texture_filter = 1

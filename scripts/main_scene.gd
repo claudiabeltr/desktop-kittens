@@ -4,8 +4,8 @@ extends Node2D
 @onready var timer_idle_animation: Timer = $TimerIdleAnimation
 @onready var timer_sleep: Timer = $TimerSleep
 @onready var timer_dialogue: Timer = $TimerDialogue
-@onready var dialogue_text: Label = $DialogueText
-@onready var dialogue_textbox: Sprite2D = $TextBox
+@onready var dialogue_text: Label = $Dialogue/DialogueText
+@onready var dialogue_textbox: Sprite2D = $Dialogue/TextBox
 @onready var menu: Control = $CatMenu
 
 #Custom enumerate for state machine states
@@ -85,7 +85,7 @@ func _ready() -> void:
 	#Start dialogue timer
 	timer_dialogue.start()
 	
-	#Menu by default hidden
+	# Menu hidden by default
 	menu.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
