@@ -6,6 +6,7 @@ extends Node2D
 @onready var timer_dialogue: Timer = $TimerDialogue
 @onready var dialogue_text: Label = $DialogueText
 @onready var dialogue_textbox: Sprite2D = $TextBox
+@onready var menu: Control = $CatMenu
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -83,6 +84,9 @@ func _ready() -> void:
 	
 	#Start dialogue timer
 	timer_dialogue.start()
+	
+	#Menu by default hidden
+	menu.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -267,3 +271,10 @@ func _on_angora_button_toggled(toggled_on: bool) -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_menu_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		menu.visible = true
+	else:
+		menu.visible = false

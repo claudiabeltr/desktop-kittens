@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
 [ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
 [ext_resource type="Texture2D" uid="uid://bt3eihx7e1s1v" path="res://assets/sprites/ui_tileset/ui.png" id="5_gubc5"]
+[ext_resource type="Texture2D" uid="uid://d1xjrwhfuf22f" path="res://textures/menu_default.tres" id="6_6u1mn"]
 [ext_resource type="Texture2D" uid="uid://b1jert5qwl6ri" path="res://textures/calico_pressed.tres" id="6_6wevv"]
 [ext_resource type="Texture2D" uid="uid://dxb1ic82y21gg" path="res://textures/bombay_default.tres" id="8_e1cbu"]
 [ext_resource type="Texture2D" uid="uid://dih2q8us2sa51" path="res://textures/bombay_pressed.tres" id="9_mngbo"]
@@ -70,8 +71,21 @@ offset_left = 956.0
 offset_top = 216.0
 offset_right = 988.0
 offset_bottom = 248.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_01n6w")
 texture_pressed = ExtResource("5_01n6w")
+stretch_mode = 0
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=2107910408]
+texture_filter = 1
+offset_left = 620.0
+offset_top = 524.0
+offset_right = 652.0
+offset_bottom = 556.0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("6_6u1mn")
+texture_pressed = ExtResource("6_6u1mn")
 stretch_mode = 0
 
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
@@ -161,6 +175,7 @@ stretch_mode = 0
 [connection signal="timeout" from="TimerSleep" to="." method="_on_timer_sleep_timeout"]
 [connection signal="timeout" from="TimerDialogue" to="." method="_on_timer_dialogue_timeout"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="MenuButton" to="." method="_on_menu_button_toggled"]
 [connection signal="toggled" from="CatMenu/BombayButton" to="." method="_on_bombay_button_toggled"]
 [connection signal="toggled" from="CatMenu/CalicoButton" to="." method="_on_calico_button_toggled"]
 [connection signal="toggled" from="CatMenu/SiamesButton" to="." method="_on_siames_button_toggled"]
