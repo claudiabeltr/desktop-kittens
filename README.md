@@ -42,10 +42,10 @@ Progress is saved locally via *json link*.
 ## Roadmap / Milestones
 [ ] All cats tilesets.
 [x] UI tilesets.
-[ ] All animations.
-[ ] Json: dialogue type.
+[x] All animations.
+[x] Json: dialogue type.
 [ ] Heart counter + persistence.
-[ ] Functional cat selection panel.
+[x] Functional cat selection panel.
 [ ] Sound effects.
 
 ## Credits and license
