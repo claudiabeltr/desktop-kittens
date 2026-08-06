@@ -46,6 +46,10 @@ Progress is saved locally via *json link*.
 [x] Json: dialogue type.
 [ ] Heart counter + persistence.
 [x] Functional cat selection panel.
+[ ] Cat and owner name panel.
+[ ] Report bugs button.
+[ ] Custom cursor.
+[ ] Add sleep animation.
 [ ] Sound effects.
 
 ## Credits and license
