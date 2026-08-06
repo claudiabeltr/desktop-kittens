@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
-[ext_resource type="SpriteFrames" uid="uid://d0pmvjiltv3k" path="res://assets/sprites/frames/ragdoll_sprite_frames.tres" id="2_k3g67"]
+[ext_resource type="SpriteFrames" uid="uid://bchmtjg6k63ab" path="res://assets/sprites/frames/sphynx_sprite_frames.tres" id="2_02d50"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://vgnd5v46og5y" path="res://textures/creamtabby_pressed.tres" id="26_k67gn"]
 [ext_resource type="Texture2D" uid="uid://cgvbcul6pe447" path="res://textures/ragdoll_default.tres" id="27_k3g67"]
 [ext_resource type="Texture2D" uid="uid://c0kkpir3i1ekt" path="res://textures/ragdoll_pressed.tres" id="28_4bgka"]
+[ext_resource type="Texture2D" uid="uid://belfkklkqwhbg" path="res://textures/sphynx_default.tres" id="29_02d50"]
+[ext_resource type="Texture2D" uid="uid://c443t87id0ttt" path="res://textures/sphynx_pressed.tres" id="30_pgk25"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -40,8 +42,8 @@ script = ExtResource("1_pw63i")
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
-sprite_frames = ExtResource("2_k3g67")
-animation = &"yawn"
+sprite_frames = ExtResource("2_02d50")
+animation = &"glitched"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
@@ -273,6 +275,21 @@ texture_normal = ExtResource("27_k3g67")
 texture_pressed = ExtResource("28_4bgka")
 stretch_mode = 0
 
+[node name="SphynxButton" type="TextureButton" parent="CatMenu" unique_id=1139613084]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 58.0
+offset_top = 138.0
+offset_right = 90.0
+offset_bottom = 170.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("29_02d50")
+texture_pressed = ExtResource("30_pgk25")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
@@ -290,3 +307,4 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/GrayTabbyButton" to="." method="_on_graytabby_button_toggled"]
 [connection signal="toggled" from="CatMenu/CreamTabbyButton" to="." method="_on_creamtabby_button_toggled"]
 [connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]
+[connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
