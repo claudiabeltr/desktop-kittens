@@ -33,6 +33,31 @@ var skins: Dictionary = {
 		"frames": preload("res://assets/sprites/frames/angora_sprite_frames.tres"),
 		"button": null,
 	},
+	
+	"tuxedo": {
+		"frames": preload("res://assets/sprites/frames/tuxedo_sprite_frames.tres"),
+		"button": null,
+	},
+	
+	"bengal": {
+		"frames": preload("res://assets/sprites/frames/bengal_sprite_frames.tres"),
+		"button": null,
+	},
+	
+	"graytabby": {
+		"frames": preload("res://assets/sprites/frames/graytabby_sprite_frames.tres"),
+		"button": null,
+	},
+	
+	"creamtabby": {
+		"frames": preload("res://assets/sprites/frames/creamtabby_sprite_frames.tres"),
+		"button": null,
+	},
+	
+	"ragdoll": {
+		"frames": preload("res://assets/sprites/frames/ragdoll_sprite_frames.tres"),
+		"button": null,
+	},
 }
 
 var sleepiness
@@ -65,6 +90,11 @@ func _ready() -> void:
 	skins["siames"]["button"] = $CatMenu/SiamesButton
 	skins["orangecat"]["button"] = $CatMenu/OrangeCatButton
 	skins["angora"]["button"] = $CatMenu/AngoraButton
+	skins["tuxedo"]["button"] = $CatMenu/TuxedoButton
+	skins["bengal"]["button"] = $CatMenu/BengalButton
+	skins["graytabby"]["button"] = $CatMenu/GrayTabbyButton
+	skins["creamtabby"]["button"] = $CatMenu/CreamTabbyButton
+	skins["ragdoll"]["button"] = $CatMenu/RagDollButton
 	
 	#Starting cat is BOMBAY
 	set_skin("bombay")
@@ -267,6 +297,27 @@ func _on_orangecat_button_toggled(toggled_on: bool) -> void:
 func _on_angora_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
 		set_skin("angora")
+
+func _on_tuxedo_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("tuxedo")
+
+func _on_bengal_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("bengal")
+
+func _on_graytabby_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("graytabby")
+
+func _on_ragdoll_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("ragdoll")
+	
+func _on_creamtabby_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("creamtabby")
+		
 
 
 func _on_exit_button_pressed() -> void:

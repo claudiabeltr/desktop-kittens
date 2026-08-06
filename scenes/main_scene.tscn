@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
-[ext_resource type="SpriteFrames" uid="uid://clo18hpuuioj5" path="res://assets/sprites/frames/angora_sprite_frames.tres" id="2_4w45t"]
+[ext_resource type="SpriteFrames" uid="uid://d0pmvjiltv3k" path="res://assets/sprites/frames/ragdoll_sprite_frames.tres" id="2_k3g67"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
@@ -18,6 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://bogow7j3mfi43" path="res://textures/orangecat_pressed.tres" id="13_r6p65"]
 [ext_resource type="Texture2D" uid="uid://dy5765tmcwnuo" path="res://textures/angora_default.tres" id="14_si52b"]
 [ext_resource type="Texture2D" uid="uid://ceypnatecqy15" path="res://textures/angora_pressed.tres" id="15_01n6w"]
+[ext_resource type="Texture2D" uid="uid://bwbx6b6jk2kpe" path="res://textures/tuxedo_default.tres" id="19_k6f3i"]
+[ext_resource type="Texture2D" uid="uid://8dfm3vfepnry" path="res://textures/tuxedo_pressed.tres" id="20_xdqt8"]
+[ext_resource type="Texture2D" uid="uid://jb70ql72imyg" path="res://textures/bengal_default.tres" id="21_adb74"]
+[ext_resource type="Texture2D" uid="uid://cyc3jmw2wqa58" path="res://textures/bengal_pressed.tres" id="22_58gk3"]
+[ext_resource type="Texture2D" uid="uid://uwckr4spqfxv" path="res://textures/graytabby_default.tres" id="23_to7gp"]
+[ext_resource type="Texture2D" uid="uid://caoh4at6a8syt" path="res://textures/graytabby_pressed.tres" id="24_u0fll"]
+[ext_resource type="Texture2D" uid="uid://dfp6uricwihdj" path="res://textures/creamtabby_default.tres" id="25_6p3nn"]
+[ext_resource type="Texture2D" uid="uid://vgnd5v46og5y" path="res://textures/creamtabby_pressed.tres" id="26_k67gn"]
+[ext_resource type="Texture2D" uid="uid://cgvbcul6pe447" path="res://textures/ragdoll_default.tres" id="27_k3g67"]
+[ext_resource type="Texture2D" uid="uid://c0kkpir3i1ekt" path="res://textures/ragdoll_pressed.tres" id="28_4bgka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -30,7 +40,7 @@ script = ExtResource("1_pw63i")
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
-sprite_frames = ExtResource("2_4w45t")
+sprite_frames = ExtResource("2_k3g67")
 animation = &"yawn"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
@@ -116,10 +126,10 @@ texture = SubResource("AtlasTexture_dxr5g")
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = 57.0
+offset_top = 56.0
+offset_right = 89.0
+offset_bottom = 88.0
 tooltip_text = "Bombay"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -132,10 +142,10 @@ stretch_mode = 0
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 74.0
-offset_top = 32.0
-offset_right = 106.0
-offset_bottom = 64.0
+offset_left = 99.0
+offset_top = 56.0
+offset_right = 131.0
+offset_bottom = 88.0
 tooltip_text = "Calico"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -147,10 +157,10 @@ stretch_mode = 0
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 116.0
-offset_top = 32.0
-offset_right = 148.0
-offset_bottom = 64.0
+offset_left = 141.0
+offset_top = 56.0
+offset_right = 173.0
+offset_bottom = 88.0
 tooltip_text = "Siames"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -162,10 +172,10 @@ stretch_mode = 0
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 158.0
-offset_top = 32.0
-offset_right = 190.0
-offset_bottom = 64.0
+offset_left = 183.0
+offset_top = 56.0
+offset_right = 215.0
+offset_bottom = 88.0
 tooltip_text = "Orange"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -177,15 +187,90 @@ stretch_mode = 0
 z_index = 1
 z_as_relative = false
 layout_mode = 0
-offset_left = 200.0
-offset_top = 32.0
-offset_right = 232.0
-offset_bottom = 64.0
+offset_left = 225.0
+offset_top = 56.0
+offset_right = 257.0
+offset_bottom = 88.0
 tooltip_text = "Angora"
 mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("14_si52b")
 texture_pressed = ExtResource("15_01n6w")
+stretch_mode = 0
+
+[node name="TuxedoButton" type="TextureButton" parent="CatMenu" unique_id=32985392]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 57.0
+offset_top = 97.0
+offset_right = 89.0
+offset_bottom = 129.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("19_k6f3i")
+texture_pressed = ExtResource("20_xdqt8")
+stretch_mode = 0
+
+[node name="BengalButton" type="TextureButton" parent="CatMenu" unique_id=1048957371]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 100.0
+offset_top = 97.0
+offset_right = 132.0
+offset_bottom = 129.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("21_adb74")
+texture_pressed = ExtResource("22_58gk3")
+stretch_mode = 0
+
+[node name="GrayTabbyButton" type="TextureButton" parent="CatMenu" unique_id=119063506]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 142.0
+offset_top = 97.0
+offset_right = 174.0
+offset_bottom = 129.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("23_to7gp")
+texture_pressed = ExtResource("24_u0fll")
+stretch_mode = 0
+
+[node name="CreamTabbyButton" type="TextureButton" parent="CatMenu" unique_id=146006037]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 184.0
+offset_top = 97.0
+offset_right = 216.0
+offset_bottom = 129.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("25_6p3nn")
+texture_pressed = ExtResource("26_k67gn")
+stretch_mode = 0
+
+[node name="RagDollButton" type="TextureButton" parent="CatMenu" unique_id=2017111855]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 226.0
+offset_top = 97.0
+offset_right = 258.0
+offset_bottom = 129.0
+tooltip_text = "Angora"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("27_k3g67")
+texture_pressed = ExtResource("28_4bgka")
 stretch_mode = 0
 
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
@@ -200,3 +285,8 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/SiamesButton" to="." method="_on_siames_button_toggled"]
 [connection signal="toggled" from="CatMenu/OrangeCatButton" to="." method="_on_orangecat_button_toggled"]
 [connection signal="toggled" from="CatMenu/AngoraButton" to="." method="_on_angora_button_toggled"]
+[connection signal="toggled" from="CatMenu/TuxedoButton" to="." method="_on_tuxedo_button_toggled"]
+[connection signal="toggled" from="CatMenu/BengalButton" to="." method="_on_bengal_button_toggled"]
+[connection signal="toggled" from="CatMenu/GrayTabbyButton" to="." method="_on_graytabby_button_toggled"]
+[connection signal="toggled" from="CatMenu/CreamTabbyButton" to="." method="_on_creamtabby_button_toggled"]
+[connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]

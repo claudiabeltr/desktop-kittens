@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dfp6uricwihdj"]
+
+[ext_resource type="Texture2D" uid="uid://2tmgas8tgntu" path="res://assets/sprites/ui_tileset/breedbuttons.png" id="1_w6114"]
+
+[resource]
+atlas = ExtResource("1_w6114")
+region = Rect2(25, 25, 6, 6)
