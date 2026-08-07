@@ -9,6 +9,7 @@ extends Node2D
 @onready var menu: Control = $CatMenu
 @onready var menu2: Control = $NameMenu
 @onready var rightarrow: Control = $RightArrowButton
+@onready var leftarrow: Control = $LeftArrowButton
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -133,6 +134,7 @@ func _ready() -> void:
 	menu.visible = false
 	menu2.visible = false
 	rightarrow.visible = false
+	leftarrow.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -355,9 +357,19 @@ func _on_menu_button_toggled(toggled_on: bool) -> void:
 	else:
 		menu.visible = false
 		rightarrow.visible = false
+		menu2.visible = false
+		leftarrow.visible = false
 
 
 func _on_right_arrow_button_pressed() -> void:
 	menu.visible = false
 	menu2.visible = true
 	rightarrow.visible = false
+	leftarrow.visible = true
+
+
+func _on_left_arrow_button_pressed() -> void:
+	menu2.visible = false
+	menu.visible = true
+	leftarrow.visible = false
+	rightarrow.visible = true

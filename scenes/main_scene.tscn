@@ -37,6 +37,7 @@
 [ext_resource type="FontFile" uid="uid://b56bxm1qrwnih" path="res://font/monaco/monaco.ttf" id="35_xa0eo"]
 [ext_resource type="StyleBox" uid="uid://clu62oaide47r" path="res://font/ui_text_line_style.tres" id="36_3mjum"]
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
+[ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -414,6 +415,17 @@ texture_normal = ExtResource("37_onjth")
 texture_pressed = SubResource("AtlasTexture_ewfdh")
 stretch_mode = 0
 
+[node name="LeftArrowButton" type="TextureButton" parent="." unique_id=1771462220]
+texture_filter = 1
+offset_left = 290.0
+offset_top = 502.0
+offset_right = 314.0
+offset_bottom = 527.8461
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("38_xa0eo")
+texture_pressed = ExtResource("38_xa0eo")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
@@ -434,3 +446,4 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
 [connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
 [connection signal="pressed" from="RightArrowButton" to="." method="_on_right_arrow_button_pressed"]
+[connection signal="pressed" from="LeftArrowButton" to="." method="_on_left_arrow_button_pressed"]
