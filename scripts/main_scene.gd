@@ -63,6 +63,11 @@ var skins: Dictionary = {
 		"frames": preload("res://assets/sprites/frames/sphynx_sprite_frames.tres"),
 		"button": null,
 	},
+	
+	"carey": {
+		"frames": preload("res://assets/sprites/frames/carey_sprite_frames.tres"),
+		"button": null,
+	},
 }
 
 var sleepiness
@@ -101,6 +106,7 @@ func _ready() -> void:
 	skins["creamtabby"]["button"] = $CatMenu/CreamTabbyButton
 	skins["ragdoll"]["button"] = $CatMenu/RagDollButton
 	skins["sphynx"]["button"] = $CatMenu/SphynxButton
+	skins["carey"]["button"] = $CatMenu/CareyButton
 	
 	#Starting cat is BOMBAY
 	set_skin("bombay")
@@ -325,7 +331,14 @@ func _on_creamtabby_button_toggled(toggled_on: bool) -> void:
 		set_skin("creamtabby")
 
 func _on_sphynx_button_toggled(toggled_on: bool) -> void:
-	set_skin("sphynx")
+	if(toggled_on == true):
+		set_skin("sphynx")
+	
+
+func _on_carey_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		set_skin("carey")
+	
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

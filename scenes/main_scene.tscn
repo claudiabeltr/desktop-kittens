@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceqj023gfn4mp"]
 
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
-[ext_resource type="SpriteFrames" uid="uid://bchmtjg6k63ab" path="res://assets/sprites/frames/sphynx_sprite_frames.tres" id="2_02d50"]
+[ext_resource type="SpriteFrames" uid="uid://4eiyu6skhea8" path="res://assets/sprites/frames/carey_sprite_frames.tres" id="2_kkokr"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://c0kkpir3i1ekt" path="res://textures/ragdoll_pressed.tres" id="28_4bgka"]
 [ext_resource type="Texture2D" uid="uid://belfkklkqwhbg" path="res://textures/sphynx_default.tres" id="29_02d50"]
 [ext_resource type="Texture2D" uid="uid://c443t87id0ttt" path="res://textures/sphynx_pressed.tres" id="30_pgk25"]
+[ext_resource type="Texture2D" uid="uid://3vdbnwba1o3e" path="res://textures/carey_default.tres" id="31_kkokr"]
+[ext_resource type="Texture2D" uid="uid://1f7ijtsy5sk6" path="res://textures/carey_pressed.tres" id="32_lhwp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -42,8 +44,8 @@ script = ExtResource("1_pw63i")
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)
 scale = Vector2(3.7625, 3.7625)
-sprite_frames = ExtResource("2_02d50")
-animation = &"glitched"
+sprite_frames = ExtResource("2_kkokr")
+animation = &"yawn"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
@@ -290,6 +292,21 @@ texture_normal = ExtResource("29_02d50")
 texture_pressed = ExtResource("30_pgk25")
 stretch_mode = 0
 
+[node name="CareyButton" type="TextureButton" parent="CatMenu" unique_id=586697381]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 100.0
+offset_top = 138.0
+offset_right = 132.0
+offset_bottom = 170.0
+tooltip_text = "Carey"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("31_kkokr")
+texture_pressed = ExtResource("32_lhwp2")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
@@ -308,3 +325,4 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/CreamTabbyButton" to="." method="_on_creamtabby_button_toggled"]
 [connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]
 [connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
+[connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
