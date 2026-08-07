@@ -36,10 +36,14 @@
 [ext_resource type="LabelSettings" uid="uid://doaigmp8msba4" path="res://font/ui_text_settings.tres" id="34_onjth"]
 [ext_resource type="FontFile" uid="uid://b56bxm1qrwnih" path="res://font/monaco/monaco.ttf" id="35_xa0eo"]
 [ext_resource type="StyleBox" uid="uid://clu62oaide47r" path="res://font/ui_text_line_style.tres" id="36_3mjum"]
+[ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
 region = Rect2(13, 7, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewfdh"]
+atlas = ExtResource("37_onjth")
 
 [node name="Node2D" type="Node2D" unique_id=1642504297]
 script = ExtResource("1_pw63i")
@@ -116,6 +120,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -312,7 +317,6 @@ texture_pressed = ExtResource("32_lhwp2")
 stretch_mode = 0
 
 [node name="NameMenu" type="Control" parent="." unique_id=2081717812]
-visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -352,11 +356,11 @@ offset_right = 245.0
 offset_bottom = 99.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0.6509804)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5411765)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.63529414)
+theme_override_colors/caret_color = Color(0, 0, 0, 0.3764706)
+theme_override_colors/selection_color = Color(0, 0, 0, 0.5176471)
 theme_override_fonts/font = ExtResource("35_xa0eo")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("36_3mjum")
@@ -388,16 +392,27 @@ offset_right = 243.0
 offset_bottom = 173.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0.6509804)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5411765)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.63529414)
+theme_override_colors/caret_color = Color(0, 0, 0, 0.3764706)
+theme_override_colors/selection_color = Color(0, 0, 0, 0.5176471)
 theme_override_fonts/font = ExtResource("35_xa0eo")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("36_3mjum")
 text = "Pepin"
 max_length = 15
+
+[node name="RightArrowButton" type="TextureButton" parent="." unique_id=1863425775]
+texture_filter = 1
+offset_left = 491.0
+offset_top = 502.0
+offset_right = 515.0
+offset_bottom = 527.8461
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("37_onjth")
+texture_pressed = SubResource("AtlasTexture_ewfdh")
+stretch_mode = 0
 
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
@@ -418,3 +433,4 @@ max_length = 15
 [connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]
 [connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
 [connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
+[connection signal="pressed" from="RightArrowButton" to="." method="_on_right_arrow_button_pressed"]
