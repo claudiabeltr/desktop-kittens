@@ -32,6 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://c443t87id0ttt" path="res://textures/sphynx_pressed.tres" id="30_pgk25"]
 [ext_resource type="Texture2D" uid="uid://3vdbnwba1o3e" path="res://textures/carey_default.tres" id="31_kkokr"]
 [ext_resource type="Texture2D" uid="uid://1f7ijtsy5sk6" path="res://textures/carey_pressed.tres" id="32_lhwp2"]
+[ext_resource type="Texture2D" uid="uid://cfjqnryqt3r4k" path="res://textures/ui_text.tres" id="33_womr8"]
+[ext_resource type="LabelSettings" uid="uid://doaigmp8msba4" path="res://font/ui_text_settings.tres" id="34_onjth"]
+[ext_resource type="FontFile" uid="uid://b56bxm1qrwnih" path="res://font/monaco/monaco.ttf" id="35_xa0eo"]
+[ext_resource type="StyleBox" uid="uid://clu62oaide47r" path="res://font/ui_text_line_style.tres" id="36_3mjum"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -306,6 +310,94 @@ toggle_mode = true
 texture_normal = ExtResource("31_kkokr")
 texture_pressed = ExtResource("32_lhwp2")
 stretch_mode = 0
+
+[node name="NameMenu" type="Control" parent="." unique_id=2081717812]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 242.0
+offset_top = 245.0
+offset_right = 555.0
+offset_bottom = 558.0
+
+[node name="TextureRect" type="TextureRect" parent="NameMenu" unique_id=311540063]
+layout_mode = 0
+offset_right = 313.0
+offset_bottom = 313.0
+texture = SubResource("AtlasTexture_dxr5g")
+
+[node name="CatNameTexture" type="TextureRect" parent="NameMenu" unique_id=1644822445]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 67.0
+offset_right = 260.0
+offset_bottom = 112.0
+texture = ExtResource("33_womr8")
+
+[node name="CatNameLabel" type="Label" parent="NameMenu" unique_id=1022101593]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 48.0
+offset_right = 176.0
+offset_bottom = 64.0
+text = "Cat Name"
+label_settings = ExtResource("34_onjth")
+
+[node name="CatNameLineEdit" type="LineEdit" parent="NameMenu" unique_id=906640911]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 81.0
+offset_right = 245.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("35_xa0eo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("36_3mjum")
+text = "Cat"
+max_length = 15
+
+[node name="OwnerNameTexture" type="TextureRect" parent="NameMenu" unique_id=446291650]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 141.0
+offset_right = 258.0
+offset_bottom = 186.0
+texture = ExtResource("33_womr8")
+
+[node name="OwnerNameLabel" type="Label" parent="NameMenu" unique_id=153173099]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 122.0
+offset_right = 174.0
+offset_bottom = 138.0
+text = "Your Name"
+label_settings = ExtResource("34_onjth")
+
+[node name="OwnerNameLineEdit" type="LineEdit" parent="NameMenu" unique_id=1253578121]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 155.0
+offset_right = 243.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("35_xa0eo")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("36_3mjum")
+text = "Pepin"
+max_length = 15
 
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
