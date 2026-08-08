@@ -32,10 +32,12 @@
 [ext_resource type="Texture2D" uid="uid://c443t87id0ttt" path="res://textures/sphynx_pressed.tres" id="30_pgk25"]
 [ext_resource type="Texture2D" uid="uid://3vdbnwba1o3e" path="res://textures/carey_default.tres" id="31_kkokr"]
 [ext_resource type="Texture2D" uid="uid://1f7ijtsy5sk6" path="res://textures/carey_pressed.tres" id="32_lhwp2"]
+[ext_resource type="Script" uid="uid://djk1h8yd1rnng" path="res://scripts/name_menu.gd" id="33_p27gv"]
 [ext_resource type="Texture2D" uid="uid://cfjqnryqt3r4k" path="res://textures/ui_text.tres" id="33_womr8"]
 [ext_resource type="LabelSettings" uid="uid://doaigmp8msba4" path="res://font/ui_text_settings.tres" id="34_onjth"]
 [ext_resource type="FontFile" uid="uid://b56bxm1qrwnih" path="res://font/monaco/monaco.ttf" id="35_xa0eo"]
 [ext_resource type="StyleBox" uid="uid://clu62oaide47r" path="res://font/ui_text_line_style.tres" id="36_3mjum"]
+[ext_resource type="Texture2D" uid="uid://vco3gw8qu5h6" path="res://textures/empty_heart.tres" id="37_3mjum"]
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
 [ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
 
@@ -325,6 +327,7 @@ offset_left = 242.0
 offset_top = 245.0
 offset_right = 555.0
 offset_bottom = 558.0
+script = ExtResource("33_p27gv")
 
 [node name="TextureRect" type="TextureRect" parent="NameMenu" unique_id=311540063]
 layout_mode = 0
@@ -403,6 +406,86 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("36_3mjum")
 text = "Pepin"
 max_length = 15
+
+[node name="Heart0" type="TextureRect" parent="NameMenu" unique_id=1446774726]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 212.0
+offset_right = 62.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart1" type="TextureRect" parent="NameMenu" unique_id=1345040934]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 212.0
+offset_right = 85.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart2" type="TextureRect" parent="NameMenu" unique_id=1803565896]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 212.0
+offset_right = 108.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart3" type="TextureRect" parent="NameMenu" unique_id=14717858]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 212.0
+offset_right = 131.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart4" type="TextureRect" parent="NameMenu" unique_id=2009769178]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 212.0
+offset_right = 154.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart5" type="TextureRect" parent="NameMenu" unique_id=735560606]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 212.0
+offset_right = 177.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart6" type="TextureRect" parent="NameMenu" unique_id=1110679000]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 212.0
+offset_right = 200.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart7" type="TextureRect" parent="NameMenu" unique_id=944352027]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 212.0
+offset_right = 223.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart8" type="TextureRect" parent="NameMenu" unique_id=1811452700]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 212.0
+offset_right = 246.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
+
+[node name="Heart9" type="TextureRect" parent="NameMenu" unique_id=478776262]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 212.0
+offset_right = 269.0
+offset_bottom = 232.0
+texture = ExtResource("37_3mjum")
 
 [node name="RightArrowButton" type="TextureButton" parent="." unique_id=1863425775]
 texture_filter = 1

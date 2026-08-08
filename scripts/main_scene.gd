@@ -97,6 +97,9 @@ func _ready() -> void:
 	heart_count = 0
 	state = State.IDLE
 	
+	#Set initial heart count to children
+	menu2.set_total_hearts(TOTAL_heart_count)
+	
 	# Add buttons to dictionary
 	skins["bombay"]["button"] = $CatMenu/BombayButton
 	skins["calico"]["button"] = $CatMenu/CalicoButton
@@ -161,6 +164,8 @@ func _process(delta: float) -> void:
 					if(heart_count == PETSPERHEART):
 						TOTAL_heart_count += 1
 						heart_count = 0
+						#If total heart count is incremented, update child value
+						menu2.set_total_hearts(TOTAL_heart_count)
 				
 				# Dialogue
 				var dialogues_petting = dialogues["petting"]
