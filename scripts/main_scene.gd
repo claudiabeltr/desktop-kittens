@@ -10,6 +10,7 @@ extends Node2D
 @onready var menu2: Control = $NameMenu
 @onready var rightarrow: Control = $RightArrowButton
 @onready var leftarrow: Control = $LeftArrowButton
+@onready var button_audio: AudioStreamPlayer = $ButtonAudioPlayer
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -303,59 +304,93 @@ func set_skin(skin: String) -> void:
 
 func _on_calico_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("calico")
 
 func _on_bombay_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("bombay")
 
 func _on_siames_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("siames")
 
 func _on_orangecat_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("orangecat")
 
 func _on_angora_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("angora")
 
 func _on_tuxedo_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("tuxedo")
 
 func _on_bengal_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("bengal")
 
 func _on_graytabby_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("graytabby")
 
 func _on_ragdoll_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("ragdoll")
 	
 func _on_creamtabby_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("creamtabby")
 
 func _on_sphynx_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("sphynx")
 	
 
 func _on_carey_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
+		#Play click button
+		button_audio.play()
 		set_skin("carey")
 	
 
 func _on_exit_button_pressed() -> void:
+	#Play click button
+	button_audio.play()
+	
+	#Simple workaround to make sure that the sound is played before exit
+	while(button_audio.playing):
+		pass
+		
 	get_tree().quit()
 
 
 func _on_menu_button_toggled(toggled_on: bool) -> void:
+	#Play click button
+	button_audio.play()
+	
 	if(toggled_on == true):
 		menu.visible = true
 		rightarrow.visible = true
@@ -367,6 +402,9 @@ func _on_menu_button_toggled(toggled_on: bool) -> void:
 
 
 func _on_right_arrow_button_pressed() -> void:
+	#Play click button
+	button_audio.play()
+	
 	menu.visible = false
 	menu2.visible = true
 	rightarrow.visible = false
@@ -374,6 +412,9 @@ func _on_right_arrow_button_pressed() -> void:
 
 
 func _on_left_arrow_button_pressed() -> void:
+	#Play click button
+	button_audio.play()
+	
 	menu2.visible = false
 	menu.visible = true
 	leftarrow.visible = false

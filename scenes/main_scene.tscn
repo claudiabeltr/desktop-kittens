@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://vco3gw8qu5h6" path="res://textures/empty_heart.tres" id="37_3mjum"]
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
 [ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
+[ext_resource type="AudioStream" uid="uid://c3fqg4g6qhvho" path="res://assets/sounds/button_click.wav" id="41_cn4eu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -518,6 +519,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("38_xa0eo")
 texture_pressed = ExtResource("38_xa0eo")
 stretch_mode = 0
+
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1142630820]
+stream = ExtResource("41_cn4eu")
 
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
