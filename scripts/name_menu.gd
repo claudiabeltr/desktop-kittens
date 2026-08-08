@@ -1,12 +1,15 @@
 extends Control
 
 const MAX_UI_HEARTS = 10
+const TRUE_MAX_UI_HEARTS = 11
 
 @onready var hearts: Array[TextureRect] = [
 	$Heart0, $Heart1, $Heart2, $Heart3, $Heart4,
 	$Heart5, $Heart6, $Heart7, $Heart8, $Heart9
 ]
 #Heart 11 is a hidden feature!
+
+@onready var heart_label: Label = $HeartCountLabel
 
 @export var empty_texture: Texture2D = preload("res://textures/empty_heart.tres")
 @export var full_texture: Texture2D = preload("res://textures/full_heart.tres")
@@ -24,6 +27,10 @@ func _process(delta: float) -> void:
 			hearts[i].texture = full_texture
 		else:
 			hearts[i].texture = empty_texture
+			
+	heart_label.text = str(total_hearts) + " / " + str(MAX_UI_HEARTS)
+	if (total_hearts >= 10):
+		heart_label.text = str(total_hearts) + " / " + str(TRUE_MAX_UI_HEARTS)
 
 # Setter function called by the father script to set the total hearts to be 
 # shown in the UI
