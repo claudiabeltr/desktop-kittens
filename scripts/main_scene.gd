@@ -77,7 +77,7 @@ var sleepiness
 var state
 var TOTAL_heart_count
 var heart_count
-const PETSPERHEART = 3
+const PETSPERHEART = 111
 const MAXTOTALHEART = 11
 var dialogues
 
