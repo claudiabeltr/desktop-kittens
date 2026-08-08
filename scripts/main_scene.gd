@@ -11,6 +11,7 @@ extends Node2D
 @onready var rightarrow: Control = $RightArrowButton
 @onready var leftarrow: Control = $LeftArrowButton
 @onready var button_audio: AudioStreamPlayer = $ButtonAudioPlayer
+@onready var meow_audio: AudioStreamPlayer = $MeowAudioPlayer
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -73,6 +74,13 @@ var skins: Dictionary = {
 		"button": null,
 	},
 }
+
+# Preload meow sounds
+var meow_sounds: Array[AudioStream] = [
+	preload("res://assets/sounds/meow1.wav"),
+	preload("res://assets/sounds/meow2.mp3"),
+	preload("res://assets/sounds/meow3.wav")
+]
 
 var sleepiness
 var state
@@ -244,6 +252,11 @@ func _on_timer_dialogue_timeout() -> void:
 	else:
 		var random_number = randi_range(0, dialogues_rare.size() - 1)
 		dialogue_text.text = dialogues_rare[random_number]
+		
+	# Play random meow sound
+	var random_audio = randi_range(0, meow_sounds.size() - 1)
+	meow_audio.stream = meow_sounds[random_audio]
+	meow_audio.play()
 		
 	# Make text and text box both visible. 
 	dialogue_text.visible = true

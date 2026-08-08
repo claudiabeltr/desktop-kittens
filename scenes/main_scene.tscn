@@ -525,6 +525,8 @@ stretch_mode = 0
 [node name="ButtonAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1142630820]
 stream = ExtResource("41_cn4eu")
 
+[node name="MeowAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=410685857]
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
