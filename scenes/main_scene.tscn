@@ -564,6 +564,8 @@ stretch_mode = 0
 [connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]
 [connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
 [connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
+[connection signal="text_changed" from="NameMenu/CatNameLineEdit" to="." method="_on_cat_name_line_edit_text_changed"]
+[connection signal="text_changed" from="NameMenu/OwnerNameLineEdit" to="." method="_on_owner_name_line_edit_text_changed"]
 [connection signal="pressed" from="RightArrowButton" to="." method="_on_right_arrow_button_pressed"]
 [connection signal="pressed" from="LeftArrowButton" to="." method="_on_left_arrow_button_pressed"]
 [connection signal="toggled" from="SoundButton" to="." method="_on_sound_button_toggled"]

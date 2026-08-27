@@ -13,6 +13,8 @@ const SAVE_PATH = "user://savegame.json"
 @onready var leftarrow: Control = $LeftArrowButton
 @onready var button_audio: AudioStreamPlayer = $ButtonAudioPlayer
 @onready var meow_audio: AudioStreamPlayer = $MeowAudioPlayer
+@onready var cat_name_lineedit: LineEdit = $NameMenu/CatNameLineEdit
+@onready var owner_name_lineedit: LineEdit = $NameMenu/OwnerNameLineEdit
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -90,6 +92,8 @@ var heart_count
 const PETSPERHEART = 111
 const MAXTOTALHEART = 11
 var dialogues
+var pet_name
+var owner_name
 
 # run idle animation flag 
 var run_idle_animation = false
@@ -101,14 +105,22 @@ var stop_petting_animation = false
 var run_yawn_animation = false
 
 func _ready() -> void:
-	
+	# Load saved state
 	var game_state = load_game()
 	if(game_state.is_empty()):
 		TOTAL_heart_count = 0
 		heart_count = 0
+		pet_name = "Name"
+		owner_name = "Name"
 	else:
 		TOTAL_heart_count = game_state["TOTAL_heart_count"]
 		heart_count = game_state["heart_count"]
+		pet_name = game_state["pet_name"]
+		owner_name = game_state["owner_name"]
+		
+	# Set cat and owner name line edit
+	cat_name_lineedit.text = pet_name
+	owner_name_lineedit.text = owner_name
 	
 	# Initialize variables
 	sleepiness = 0
@@ -407,7 +419,9 @@ func _on_exit_button_pressed() -> void:
 		
 	var game_state = {
 		"TOTAL_heart_count": TOTAL_heart_count,
-		"heart_count": heart_count
+		"heart_count": heart_count,
+		"pet_name": pet_name,
+		"owner_name": owner_name
 	}
 	save_game(game_state)
 	get_tree().quit()
@@ -455,6 +469,13 @@ func _on_sound_button_toggled(toggled_on: bool) -> void:
 		button_audio.set_volume_linear(1)
 		meow_audio.set_volume_linear(1)
 
+func _on_cat_name_line_edit_text_changed(new_text: String) -> void:
+	pet_name = new_text
+	
+func _on_owner_name_line_edit_text_changed(new_text: String) -> void:
+	owner_name = new_text
+	
+# Save / Load game functions
 func save_game(player_data: Dictionary) -> void:
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
