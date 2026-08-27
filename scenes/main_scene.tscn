@@ -41,6 +41,9 @@
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
 [ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
 [ext_resource type="AudioStream" uid="uid://c3fqg4g6qhvho" path="res://assets/sounds/button_click.wav" id="41_cn4eu"]
+[ext_resource type="Texture2D" uid="uid://c2ualywgkhhyj" path="res://textures/sound_default.tres" id="42_jix7a"]
+[ext_resource type="Texture2D" uid="uid://tu6bn1xfbdsi" path="res://textures/sound_pressed.tres" id="43_segjr"]
+[ext_resource type="Texture2D" uid="uid://0dlnslchon0t" path="res://textures/sound_hover.tres" id="44_beobj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -527,6 +530,18 @@ stream = ExtResource("41_cn4eu")
 
 [node name="MeowAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=410685857]
 
+[node name="SoundButton" type="TextureButton" parent="." unique_id=1558718363]
+texture_filter = 1
+offset_left = 620.0
+offset_top = 491.0
+offset_right = 652.0
+offset_bottom = 523.0
+toggle_mode = true
+texture_normal = ExtResource("42_jix7a")
+texture_pressed = ExtResource("43_segjr")
+texture_hover = ExtResource("44_beobj")
+stretch_mode = 0
+
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
 [connection signal="timeout" from="TimerIdleAnimation" to="." method="_on_timer_idle_animation_timeout"]
@@ -548,3 +563,4 @@ stream = ExtResource("41_cn4eu")
 [connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
 [connection signal="pressed" from="RightArrowButton" to="." method="_on_right_arrow_button_pressed"]
 [connection signal="pressed" from="LeftArrowButton" to="." method="_on_left_arrow_button_pressed"]
+[connection signal="toggled" from="SoundButton" to="." method="_on_sound_button_toggled"]

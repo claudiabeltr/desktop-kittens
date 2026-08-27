@@ -432,3 +432,12 @@ func _on_left_arrow_button_pressed() -> void:
 	menu.visible = true
 	leftarrow.visible = false
 	rightarrow.visible = true
+
+
+func _on_sound_button_toggled(toggled_on: bool) -> void:
+	if(toggled_on == true):
+		button_audio.set_volume_linear(0)
+		meow_audio.set_volume_linear(0)
+	else:
+		button_audio.set_volume_linear(1)
+		meow_audio.set_volume_linear(1)
