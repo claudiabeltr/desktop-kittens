@@ -94,6 +94,7 @@ const MAXTOTALHEART = 11
 var dialogues
 var pet_name
 var owner_name
+var current_skin = "bombay"
 
 # run idle animation flag 
 var run_idle_animation = false
@@ -117,6 +118,7 @@ func _ready() -> void:
 		heart_count = game_state["heart_count"]
 		pet_name = game_state["pet_name"]
 		owner_name = game_state["owner_name"]
+		current_skin = game_state["current_skin"]
 		
 	# Set cat and owner name line edit
 	cat_name_lineedit.text = pet_name
@@ -143,8 +145,8 @@ func _ready() -> void:
 	skins["sphynx"]["button"] = $CatMenu/SphynxButton
 	skins["carey"]["button"] = $CatMenu/CareyButton
 	
-	#Starting cat is BOMBAY
-	set_skin("bombay")
+	#Last cat played
+	set_skin(current_skin)
 	
 	#Play idle animation at start
 	sprite.play("idle")
@@ -330,6 +332,7 @@ func load_dialogues():
 # so a new SpriteFrames is required for each skin. It additionally manages the
 # buttons that set the skins, leaving pressed only the button for the current skin
 func set_skin(skin: String) -> void:
+	current_skin = skin
 	sprite.set_sprite_frames(skins[skin]["frames"])
 	for key in skins:
 		if(key != skin):
@@ -421,7 +424,8 @@ func _on_exit_button_pressed() -> void:
 		"TOTAL_heart_count": TOTAL_heart_count,
 		"heart_count": heart_count,
 		"pet_name": pet_name,
-		"owner_name": owner_name
+		"owner_name": owner_name,
+		"current_skin": current_skin
 	}
 	save_game(game_state)
 	get_tree().quit()
