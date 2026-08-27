@@ -538,6 +538,7 @@ offset_left = 620.0
 offset_top = 491.0
 offset_right = 652.0
 offset_bottom = 523.0
+tooltip_text = "Sound off/on"
 toggle_mode = true
 texture_normal = ExtResource("42_jix7a")
 texture_pressed = ExtResource("43_segjr")
