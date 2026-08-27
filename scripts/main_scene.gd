@@ -1,4 +1,5 @@
 extends Node2D
+const SAVE_PATH = "user://savegame.json"
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer_idle_animation: Timer = $TimerIdleAnimation
@@ -100,10 +101,17 @@ var stop_petting_animation = false
 var run_yawn_animation = false
 
 func _ready() -> void:
+	
+	var game_state = load_game()
+	if(game_state.is_empty()):
+		TOTAL_heart_count = 0
+		heart_count = 0
+	else:
+		TOTAL_heart_count = game_state["TOTAL_heart_count"]
+		heart_count = game_state["heart_count"]
+	
 	# Initialize variables
 	sleepiness = 0
-	TOTAL_heart_count = 0
-	heart_count = 0
 	state = State.IDLE
 	
 	#Set initial heart count to children
@@ -397,6 +405,11 @@ func _on_exit_button_pressed() -> void:
 	while(button_audio.playing):
 		pass
 		
+	var game_state = {
+		"TOTAL_heart_count": TOTAL_heart_count,
+		"heart_count": heart_count
+	}
+	save_game(game_state)
 	get_tree().quit()
 
 
@@ -441,3 +454,31 @@ func _on_sound_button_toggled(toggled_on: bool) -> void:
 	else:
 		button_audio.set_volume_linear(1)
 		meow_audio.set_volume_linear(1)
+
+func save_game(player_data: Dictionary) -> void:
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		var json_string = JSON.stringify(player_data, "\t")
+		file.store_string(json_string)
+		file.close()
+		print("Partida guardada correctamente.")
+	else:
+		print("Error al guardar: ", FileAccess.get_open_error())
+		
+func load_game() -> Dictionary:
+	if not FileAccess.file_exists(SAVE_PATH):
+		print("No existe archivo de guardado previo.")
+		return {}
+	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	if file:
+		var content = file.get_as_text()
+		file.close()
+		var test_json_conv = JSON.new()
+		var error = test_json_conv.parse(content)
+		if error == OK:
+			var data = test_json_conv.data
+			print("Partida cargada.")
+			return data
+		else:
+			print("Error al parsear JSON: ", test_json_conv.get_error_message())
+	return {}
