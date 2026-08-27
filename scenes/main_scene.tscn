@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bpqdq8sb8u4ix" path="res://scripts/dialogue.gd" id="5_7nt27"]
 [ext_resource type="Texture2D" uid="uid://b75el0g0rfcxr" path="res://textures/calico_default.tres" id="5_c1pb6"]
 [ext_resource type="Texture2D" uid="uid://bt3eihx7e1s1v" path="res://assets/sprites/ui_tileset/ui.png" id="5_gubc5"]
+[ext_resource type="Texture2D" uid="uid://mlo3up6eq12o" path="res://textures/menu_hover.tres" id="5_segjr"]
 [ext_resource type="Texture2D" uid="uid://d1xjrwhfuf22f" path="res://textures/menu_default.tres" id="6_6u1mn"]
 [ext_resource type="Texture2D" uid="uid://b1jert5qwl6ri" path="res://textures/calico_pressed.tres" id="6_6wevv"]
 [ext_resource type="Texture2D" uid="uid://dxb1ic82y21gg" path="res://textures/bombay_default.tres" id="8_e1cbu"]
@@ -103,6 +104,7 @@ mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("6_6u1mn")
 texture_pressed = ExtResource("6_6u1mn")
+texture_hover = ExtResource("5_segjr")
 stretch_mode = 0
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=600922324]
