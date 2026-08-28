@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6h6galfsteun" path="res://scripts/main_scene.gd" id="1_pw63i"]
 [ext_resource type="SpriteFrames" uid="uid://4eiyu6skhea8" path="res://assets/sprites/frames/carey_sprite_frames.tres" id="2_kkokr"]
 [ext_resource type="LabelSettings" uid="uid://g01gsk4fd63q" path="res://font/dialogue_font.tres" id="3_7ykc4"]
+[ext_resource type="Texture2D" uid="uid://c4tapj84jt6k2" path="res://textures/exit_hover.tres" id="4_beobj"]
 [ext_resource type="Texture2D" uid="uid://ccgt6v5ppf53w" path="res://assets/sprites/ui_tileset/bubbletext.png" id="4_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://cq8ejmxn6by7c" path="res://textures/exit_default.tres" id="5_01n6w"]
 [ext_resource type="Script" uid="uid://bpqdq8sb8u4ix" path="res://scripts/dialogue.gd" id="5_7nt27"]
@@ -42,9 +43,11 @@
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
 [ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
 [ext_resource type="AudioStream" uid="uid://c3fqg4g6qhvho" path="res://assets/sounds/button_click.wav" id="41_cn4eu"]
+[ext_resource type="Texture2D" uid="uid://ck5sxiva4sd0s" path="res://textures/rightarrow_hover.tres" id="42_86meh"]
 [ext_resource type="Texture2D" uid="uid://c2ualywgkhhyj" path="res://textures/sound_default.tres" id="42_jix7a"]
 [ext_resource type="Texture2D" uid="uid://tu6bn1xfbdsi" path="res://textures/sound_pressed.tres" id="43_segjr"]
 [ext_resource type="Texture2D" uid="uid://0dlnslchon0t" path="res://textures/sound_hover.tres" id="44_beobj"]
+[ext_resource type="Texture2D" uid="uid://cktrfablmukhx" path="res://textures/leftarrow_hover.tres" id="44_duuju"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -91,13 +94,14 @@ tooltip_text = "Quit game"
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_01n6w")
 texture_pressed = ExtResource("5_01n6w")
+texture_hover = ExtResource("4_beobj")
 stretch_mode = 0
 
 [node name="MenuButton" type="TextureButton" parent="." unique_id=2107910408]
 texture_filter = 1
-offset_left = 620.0
+offset_left = 616.0
 offset_top = 524.0
-offset_right = 652.0
+offset_right = 648.0
 offset_bottom = 556.0
 tooltip_text = "Menu"
 mouse_default_cursor_shape = 2
@@ -514,6 +518,7 @@ offset_bottom = 527.8461
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("37_onjth")
 texture_pressed = SubResource("AtlasTexture_ewfdh")
+texture_hover = ExtResource("42_86meh")
 stretch_mode = 0
 
 [node name="LeftArrowButton" type="TextureButton" parent="." unique_id=1771462220]
@@ -525,6 +530,7 @@ offset_bottom = 527.8461
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("38_xa0eo")
 texture_pressed = ExtResource("38_xa0eo")
+texture_hover = ExtResource("44_duuju")
 stretch_mode = 0
 
 [node name="ButtonAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1142630820]
@@ -534,11 +540,12 @@ stream = ExtResource("41_cn4eu")
 
 [node name="SoundButton" type="TextureButton" parent="." unique_id=1558718363]
 texture_filter = 1
-offset_left = 620.0
+offset_left = 616.0
 offset_top = 491.0
-offset_right = 652.0
+offset_right = 648.0
 offset_bottom = 523.0
 tooltip_text = "Sound off/on"
+mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("42_jix7a")
 texture_pressed = ExtResource("43_segjr")
