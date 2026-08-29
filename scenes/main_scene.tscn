@@ -64,6 +64,7 @@ atlas = ExtResource("50_j4epa")
 atlas = ExtResource("37_onjth")
 
 [node name="Node2D" type="Node2D" unique_id=1642504297]
+position = Vector2(-204, -53)
 script = ExtResource("1_pw63i")
 
 [node name="DragArea" type="Control" parent="." unique_id=301274967]
@@ -71,25 +72,28 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1172.0
-offset_bottom = 662.0
+offset_left = 200.0
+offset_top = 48.0
+offset_right = 1039.0
+offset_bottom = 627.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1918219577]
 texture_filter = 1
-position = Vector2(786.00006, 400.00003)
+position = Vector2(785.00006, 419.00003)
 scale = Vector2(3.7625, 3.7625)
 sprite_frames = ExtResource("2_kkokr")
 animation = &"yawn"
 
 [node name="PetButton" type="Button" parent="." unique_id=68894806]
 modulate = Color(1, 1, 1, 0)
-offset_left = 643.0
-offset_top = 247.0
-offset_right = 907.0
-offset_bottom = 332.0
+offset_left = 642.0
+offset_top = 266.0
+offset_right = 906.0
+offset_bottom = 351.0
 mouse_default_cursor_shape = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TimerIdleAnimation" type="Timer" parent="." unique_id=1436751240]
 wait_time = 5.0
@@ -103,23 +107,24 @@ wait_time = 60.0
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=97768289]
 texture_filter = 1
-offset_left = 956.0
-offset_top = 216.0
-offset_right = 988.0
-offset_bottom = 248.0
+offset_left = 955.0
+offset_top = 235.0
+offset_right = 987.0
+offset_bottom = 267.0
 tooltip_text = "Quit game"
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_01n6w")
 texture_pressed = ExtResource("5_01n6w")
 texture_hover = ExtResource("4_beobj")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="MenuButton" type="TextureButton" parent="." unique_id=2107910408]
 texture_filter = 1
-offset_left = 616.0
-offset_top = 524.0
-offset_right = 648.0
-offset_bottom = 556.0
+offset_left = 615.0
+offset_top = 543.0
+offset_right = 647.0
+offset_bottom = 575.0
 tooltip_text = "Menu"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -127,9 +132,10 @@ texture_normal = ExtResource("6_6u1mn")
 texture_pressed = ExtResource("6_6u1mn")
 texture_hover = ExtResource("5_segjr")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="Node2D" parent="." unique_id=600922324]
-position = Vector2(581, 162)
+position = Vector2(580, 181)
 script = ExtResource("5_7nt27")
 
 [node name="TextBox" type="Sprite2D" parent="Dialogue" unique_id=447978560]
@@ -154,16 +160,18 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 242.0
-offset_top = 245.0
-offset_right = 555.0
-offset_bottom = 558.0
+offset_left = 241.0
+offset_top = 264.0
+offset_right = 554.0
+offset_bottom = 577.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="CatMenu" unique_id=1612265634]
 layout_mode = 0
 offset_right = 313.0
 offset_bottom = 313.0
 texture = SubResource("AtlasTexture_dxr5g")
+metadata/_edit_use_anchors_ = true
 
 [node name="BombayButton" type="TextureButton" parent="CatMenu" unique_id=54197753]
 z_index = 1
@@ -180,6 +188,7 @@ button_pressed = true
 texture_normal = ExtResource("8_e1cbu")
 texture_pressed = ExtResource("9_mngbo")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="CalicoButton" type="TextureButton" parent="CatMenu" unique_id=735397730]
 z_index = 1
@@ -195,6 +204,7 @@ toggle_mode = true
 texture_normal = ExtResource("5_c1pb6")
 texture_pressed = ExtResource("6_6wevv")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="SiamesButton" type="TextureButton" parent="CatMenu" unique_id=193661910]
 z_index = 1
@@ -210,6 +220,7 @@ toggle_mode = true
 texture_normal = ExtResource("10_e1cbu")
 texture_pressed = ExtResource("11_mngbo")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="OrangeCatButton" type="TextureButton" parent="CatMenu" unique_id=707711599]
 z_index = 1
@@ -225,6 +236,7 @@ toggle_mode = true
 texture_normal = ExtResource("12_4w45t")
 texture_pressed = ExtResource("13_r6p65")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="AngoraButton" type="TextureButton" parent="CatMenu" unique_id=766248376]
 z_index = 1
@@ -240,6 +252,7 @@ toggle_mode = true
 texture_normal = ExtResource("14_si52b")
 texture_pressed = ExtResource("15_01n6w")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="TuxedoButton" type="TextureButton" parent="CatMenu" unique_id=32985392]
 z_index = 1
@@ -255,6 +268,7 @@ toggle_mode = true
 texture_normal = ExtResource("19_k6f3i")
 texture_pressed = ExtResource("20_xdqt8")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="BengalButton" type="TextureButton" parent="CatMenu" unique_id=1048957371]
 z_index = 1
@@ -270,6 +284,7 @@ toggle_mode = true
 texture_normal = ExtResource("21_adb74")
 texture_pressed = ExtResource("22_58gk3")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="GrayTabbyButton" type="TextureButton" parent="CatMenu" unique_id=119063506]
 z_index = 1
@@ -285,6 +300,7 @@ toggle_mode = true
 texture_normal = ExtResource("23_to7gp")
 texture_pressed = ExtResource("24_u0fll")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="CreamTabbyButton" type="TextureButton" parent="CatMenu" unique_id=146006037]
 z_index = 1
@@ -300,6 +316,7 @@ toggle_mode = true
 texture_normal = ExtResource("25_6p3nn")
 texture_pressed = ExtResource("26_k67gn")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="RagDollButton" type="TextureButton" parent="CatMenu" unique_id=2017111855]
 z_index = 1
@@ -315,6 +332,7 @@ toggle_mode = true
 texture_normal = ExtResource("27_k3g67")
 texture_pressed = ExtResource("28_4bgka")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="SphynxButton" type="TextureButton" parent="CatMenu" unique_id=1139613084]
 z_index = 1
@@ -330,6 +348,7 @@ toggle_mode = true
 texture_normal = ExtResource("29_02d50")
 texture_pressed = ExtResource("30_pgk25")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="CareyButton" type="TextureButton" parent="CatMenu" unique_id=586697381]
 z_index = 1
@@ -345,6 +364,7 @@ toggle_mode = true
 texture_normal = ExtResource("31_kkokr")
 texture_pressed = ExtResource("32_lhwp2")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="BugButton" type="TextureButton" parent="CatMenu" unique_id=603298318]
 texture_filter = 1
@@ -358,6 +378,7 @@ texture_normal = ExtResource("50_j4epa")
 texture_pressed = SubResource("AtlasTexture_qrwul")
 texture_hover = ExtResource("51_ruju6")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="BugsLabel" type="Label" parent="CatMenu" unique_id=877137206]
 layout_mode = 0
@@ -369,6 +390,7 @@ text = "Any bugs? Let us know <3 !!"
 label_settings = ExtResource("34_onjth")
 autowrap_mode = 2
 script = ExtResource("38_ruju6")
+metadata/_edit_use_anchors_ = true
 
 [node name="NameMenu" type="Control" parent="." unique_id=2081717812]
 visible = false
@@ -552,27 +574,29 @@ label_settings = ExtResource("34_onjth")
 
 [node name="RightArrowButton" type="TextureButton" parent="." unique_id=1863425775]
 texture_filter = 1
-offset_left = 491.0
-offset_top = 502.0
-offset_right = 515.0
-offset_bottom = 527.8461
+offset_left = 490.0
+offset_top = 521.0
+offset_right = 514.0
+offset_bottom = 546.8461
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("37_onjth")
 texture_pressed = SubResource("AtlasTexture_ewfdh")
 texture_hover = ExtResource("42_86meh")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="LeftArrowButton" type="TextureButton" parent="." unique_id=1771462220]
 texture_filter = 1
-offset_left = 290.0
-offset_top = 502.0
-offset_right = 314.0
-offset_bottom = 527.8461
+offset_left = 289.0
+offset_top = 521.0
+offset_right = 313.0
+offset_bottom = 546.8461
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("38_xa0eo")
 texture_pressed = ExtResource("38_xa0eo")
 texture_hover = ExtResource("44_duuju")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1142630820]
 stream = ExtResource("41_cn4eu")
@@ -581,10 +605,10 @@ stream = ExtResource("41_cn4eu")
 
 [node name="SoundButton" type="TextureButton" parent="." unique_id=1558718363]
 texture_filter = 1
-offset_left = 616.0
-offset_top = 491.0
-offset_right = 648.0
-offset_bottom = 523.0
+offset_left = 615.0
+offset_top = 510.0
+offset_right = 647.0
+offset_bottom = 542.0
 tooltip_text = "Sound off/on"
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -592,6 +616,7 @@ texture_normal = ExtResource("42_jix7a")
 texture_pressed = ExtResource("43_segjr")
 texture_hover = ExtResource("44_beobj")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="PurringAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1733187624]
 stream = ExtResource("49_duuju")
