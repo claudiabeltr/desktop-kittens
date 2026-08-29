@@ -93,6 +93,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4o1y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7sh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o1y6")
 }],
 "loop": 0,
 "name": &"glitched",
