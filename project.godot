@@ -16,8 +16,12 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]
 
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
 
 [editor]
 
@@ -37,5 +41,6 @@ theme/custom_font="uid://b56bxm1qrwnih"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/transparent_background=true
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
