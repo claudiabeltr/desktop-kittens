@@ -515,4 +515,4 @@ func load_game() -> Dictionary:
 
 
 func _on_bug_button_pressed() -> void:
-	OS.shell_open("https://www.youtube.com/?gl=ES&hl=es&app=desktop")
+	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSf8wBI-APPYOQR7IsPzWBU_KiY27ooRpFeo5nArR3GfvalWHQ/viewform?usp=publish-editor")
