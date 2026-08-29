@@ -14,17 +14,26 @@
 		"Do you have any... you know... Catnip?",
 		"Uhm... Nice PC... I guess...",
 		"My gender? Idgaf about that shit...",
-		"Did you know Careys can't be male? Go feminism!"
-		
+		"Did you know Careys can't be male? Go feminism!",
+		"I love eating my furrr !!",
+		"Shouldn't you be outside...?",
+		"Sigh... I wish I could doomscroll...",
+		"Hard day?",
+		"3 minutes awake? Man, I need to sleep...",
+		"Move me around the screen !!",
+		"I feel alone sometimes... I think you can relate"
 	],
+	
 	"petting": [
 		"Purrrr...",
 		"Meooowww...",
 		"Thank you !! ♡",
 		"Purrr... Purrr...",
 		"You trying to be friends like this?",
-		"Purrr... Can I bite you?"
-		
+		"Purrr... Can I bite you?",
+		"Purrr... Nice.",
+		"Purrrr... Meow?",
+		"Bad petting, try again..."
 	],
 	
 	"rare": [
@@ -32,7 +41,8 @@
 		"Am I trapped here?",
 		"Do I exist in real life?",
 		"Are we alone...?",
-		
+		"I can't feel anything inside this box",
+		"I'm inmune to glitches"
 	]
 	
 }
