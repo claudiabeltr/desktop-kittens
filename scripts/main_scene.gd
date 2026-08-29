@@ -512,3 +512,7 @@ func load_game() -> Dictionary:
 		else:
 			print("Error al parsear JSON: ", test_json_conv.get_error_message())
 	return {}
+
+
+func _on_bug_button_pressed() -> void:
+	OS.shell_open("https://www.youtube.com/?gl=ES&hl=es&app=desktop")
