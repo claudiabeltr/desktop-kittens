@@ -15,6 +15,7 @@ const SAVE_PATH = "user://savegame.json"
 @onready var meow_audio: AudioStreamPlayer = $MeowAudioPlayer
 @onready var cat_name_lineedit: LineEdit = $NameMenu/CatNameLineEdit
 @onready var owner_name_lineedit: LineEdit = $NameMenu/OwnerNameLineEdit
+@onready var purring_audio: AudioStreamPlayer = $PurringAudioPlayer
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -188,6 +189,7 @@ func _process(delta: float) -> void:
 				timer_sleep.stop() # Stop sleep timer while petting
 				timer_idle_animation.stop()
 				sprite.play("petting")
+				purring_audio.play()
 				state = State.PETTING
 				
 				if(TOTAL_heart_count < MAXTOTALHEART):
@@ -228,6 +230,7 @@ func _process(delta: float) -> void:
 				timer_sleep.start() # Start timer again
 				timer_idle_animation.start()
 				sprite.play("idle")
+				purring_audio.stop()
 				state = State.IDLE
 				
 				dialogue_text.visible = false
@@ -469,9 +472,11 @@ func _on_sound_button_toggled(toggled_on: bool) -> void:
 	if(toggled_on == true):
 		button_audio.set_volume_linear(0)
 		meow_audio.set_volume_linear(0)
+		purring_audio.set_volume_linear(0)
 	else:
 		button_audio.set_volume_linear(1)
 		meow_audio.set_volume_linear(1)
+		purring_audio.set_volume_linear(1)
 
 func _on_cat_name_line_edit_text_changed(new_text: String) -> void:
 	pet_name = new_text

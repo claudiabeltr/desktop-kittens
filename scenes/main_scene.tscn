@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://tu6bn1xfbdsi" path="res://textures/sound_pressed.tres" id="43_segjr"]
 [ext_resource type="Texture2D" uid="uid://0dlnslchon0t" path="res://textures/sound_hover.tres" id="44_beobj"]
 [ext_resource type="Texture2D" uid="uid://cktrfablmukhx" path="res://textures/leftarrow_hover.tres" id="44_duuju"]
+[ext_resource type="AudioStream" uid="uid://cefx2vjjmboun" path="res://assets/sounds/purring.mp3" id="49_duuju"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
@@ -551,6 +552,10 @@ texture_normal = ExtResource("42_jix7a")
 texture_pressed = ExtResource("43_segjr")
 texture_hover = ExtResource("44_beobj")
 stretch_mode = 0
+
+[node name="PurringAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1733187624]
+stream = ExtResource("49_duuju")
+parameters/looping = true
 
 [connection signal="button_down" from="PetButton" to="." method="_on_petbutton_button_down"]
 [connection signal="button_up" from="PetButton" to="." method="_on_petbutton_button_up"]
