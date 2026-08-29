@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="desktop-pet"
+config/name="desktop-kittens"
+config/version="1.0"
 run/main_scene="uid://ceqj023gfn4mp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
