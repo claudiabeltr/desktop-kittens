@@ -41,6 +41,7 @@
 [ext_resource type="StyleBox" uid="uid://clu62oaide47r" path="res://font/ui_text_line_style.tres" id="36_3mjum"]
 [ext_resource type="Texture2D" uid="uid://vco3gw8qu5h6" path="res://textures/empty_heart.tres" id="37_3mjum"]
 [ext_resource type="Texture2D" uid="uid://cvbc0f8ux8dig" path="res://textures/rightarrow_default.tres" id="37_onjth"]
+[ext_resource type="Script" uid="uid://cq1ms3gjjn3no" path="res://scenes/bugs_label.gd" id="38_ruju6"]
 [ext_resource type="Texture2D" uid="uid://bpkwjhp2qxcax" path="res://textures/leftarrow_default.tres" id="38_xa0eo"]
 [ext_resource type="AudioStream" uid="uid://c3fqg4g6qhvho" path="res://assets/sounds/button_click.wav" id="41_cn4eu"]
 [ext_resource type="Texture2D" uid="uid://ck5sxiva4sd0s" path="res://textures/rightarrow_hover.tres" id="42_86meh"]
@@ -49,10 +50,15 @@
 [ext_resource type="Texture2D" uid="uid://0dlnslchon0t" path="res://textures/sound_hover.tres" id="44_beobj"]
 [ext_resource type="Texture2D" uid="uid://cktrfablmukhx" path="res://textures/leftarrow_hover.tres" id="44_duuju"]
 [ext_resource type="AudioStream" uid="uid://cefx2vjjmboun" path="res://assets/sounds/purring.mp3" id="49_duuju"]
+[ext_resource type="Texture2D" uid="uid://bdoahleno3uwc" path="res://textures/bug_default.tres" id="50_j4epa"]
+[ext_resource type="Texture2D" uid="uid://be1m7ghaoivr0" path="res://textures/bug_hover.tres" id="51_ruju6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxr5g"]
 atlas = ExtResource("5_gubc5")
 region = Rect2(13, 7, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrwul"]
+atlas = ExtResource("50_j4epa")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewfdh"]
 atlas = ExtResource("37_onjth")
@@ -135,7 +141,6 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CatMenu" type="Control" parent="." unique_id=445221035]
-visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -331,7 +336,32 @@ texture_normal = ExtResource("31_kkokr")
 texture_pressed = ExtResource("32_lhwp2")
 stretch_mode = 0
 
+[node name="BugButton" type="TextureButton" parent="CatMenu" unique_id=603298318]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 223.0
+offset_right = 70.0
+offset_bottom = 249.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("50_j4epa")
+texture_pressed = SubResource("AtlasTexture_qrwul")
+texture_hover = ExtResource("51_ruju6")
+stretch_mode = 0
+
+[node name="BugsLabel" type="Label" parent="CatMenu" unique_id=877137206]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 231.0
+offset_right = 272.0
+offset_bottom = 250.0
+text = "Any bugs? Let us know <3 !!"
+label_settings = ExtResource("34_onjth")
+autowrap_mode = 2
+script = ExtResource("38_ruju6")
+
 [node name="NameMenu" type="Control" parent="." unique_id=2081717812]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -576,6 +606,7 @@ parameters/looping = true
 [connection signal="toggled" from="CatMenu/RagDollButton" to="." method="_on_ragdoll_button_toggled"]
 [connection signal="toggled" from="CatMenu/SphynxButton" to="." method="_on_sphynx_button_toggled"]
 [connection signal="toggled" from="CatMenu/CareyButton" to="." method="_on_carey_button_toggled"]
+[connection signal="pressed" from="CatMenu/BugButton" to="." method="_on_bug_button_pressed"]
 [connection signal="text_changed" from="NameMenu/CatNameLineEdit" to="." method="_on_cat_name_line_edit_text_changed"]
 [connection signal="text_changed" from="NameMenu/OwnerNameLineEdit" to="." method="_on_owner_name_line_edit_text_changed"]
 [connection signal="pressed" from="RightArrowButton" to="." method="_on_right_arrow_button_pressed"]
