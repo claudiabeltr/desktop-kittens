@@ -16,6 +16,7 @@ const SAVE_PATH = "user://savegame.json"
 @onready var cat_name_lineedit: LineEdit = $NameMenu/CatNameLineEdit
 @onready var owner_name_lineedit: LineEdit = $NameMenu/OwnerNameLineEdit
 @onready var purring_audio: AudioStreamPlayer = $PurringAudioPlayer
+@onready var drag_area: Control = $DragArea
 
 #Custom enumerate for state machine states
 enum State { IDLE, PETTING, SLEEP }
@@ -97,6 +98,10 @@ var pet_name
 var owner_name
 var current_skin = "bombay"
 
+#Window drag
+var is_dragging := false
+var drag_offset := Vector2.ZERO
+
 # run idle animation flag 
 var run_idle_animation = false
 # run petting animation flag 
@@ -107,6 +112,10 @@ var stop_petting_animation = false
 var run_yawn_animation = false
 
 func _ready() -> void:
+	# Window Drag
+	drag_area.gui_input.connect(_on_drag_area_gui_input) #This is how signals are connected through code
+	#drag_area.mouse_default_cursor_shape = Control.CURSOR_MOVE  # opcional, feedback visual
+	
 	# Load saved state
 	var game_state = load_game()
 	if(game_state.is_empty()):
@@ -173,6 +182,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Window drag
+	if is_dragging:
+		var new_pos = Vector2(DisplayServer.mouse_get_position()) - drag_offset
+		DisplayServer.window_set_position(Vector2i(new_pos))
 	
 	#Switch
 	match state:
@@ -516,3 +529,11 @@ func load_game() -> Dictionary:
 
 func _on_bug_button_pressed() -> void:
 	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSf8wBI-APPYOQR7IsPzWBU_KiY27ooRpFeo5nArR3GfvalWHQ/viewform?usp=publish-editor")
+
+func _on_drag_area_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			is_dragging = true
+			drag_offset = Vector2(DisplayServer.mouse_get_position()) - Vector2(DisplayServer.window_get_position())
+		else:
+			is_dragging = false

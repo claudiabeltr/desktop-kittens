@@ -66,6 +66,16 @@ atlas = ExtResource("37_onjth")
 [node name="Node2D" type="Node2D" unique_id=1642504297]
 script = ExtResource("1_pw63i")
 
+[node name="DragArea" type="Control" parent="." unique_id=301274967]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1172.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1918219577]
 texture_filter = 1
 position = Vector2(786.00006, 400.00003)

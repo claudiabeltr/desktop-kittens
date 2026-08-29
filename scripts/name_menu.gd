@@ -34,5 +34,5 @@ func _process(delta: float) -> void:
 
 # Setter function called by the father script to set the total hearts to be 
 # shown in the UI
-func set_total_hearts(hearts):
-	total_hearts = hearts
+func set_total_hearts(hearts_set):
+	total_hearts = hearts_set
