@@ -14,6 +14,7 @@ config/name="desktop-kittens"
 config/version="1.0"
 run/main_scene="uid://ceqj023gfn4mp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="uid://doanomd46yc0s"
 
 [display]
 
